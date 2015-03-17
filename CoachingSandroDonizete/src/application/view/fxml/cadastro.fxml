@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="200.0" prefWidth="600.0" styleClass="pane" stylesheets="@../css/cadastro.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controller.CadastroController">
+   <children>
+      <Label layoutX="9.0" layoutY="7.0" text="Insira as Informacoes para o Cadastro" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="65.0" text="Nome" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="100.0" text="Dt. Nasc." textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <TextField layoutX="109.0" layoutY="70.0" prefHeight="25.0" prefWidth="406.0" />
+      <TextField layoutX="110.0" layoutY="105.0" />
+      <Button layoutX="18.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Criar" />
+      <Button layoutX="134.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Cancelar" onAction="#cancelar"/>
+   </children>
+</AnchorPane>
