@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="201.0" BorderPane.alignment="CENTER">
+         <children>
+            <Accordion prefHeight="601.0" prefWidth="202.0">
+              <panes>
+                <TitledPane text="Cliente">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="-1.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="201.0" text="Cadastro" />
+                              <Button layoutY="32.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="201.0" text="Dados do Programa" />
+                              <Button layoutY="65.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="201.0" text="Sessões Historico Rota" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane expanded="false" text="Sessões">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="201.0" text="Competencia" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane prefHeight="80.0" prefWidth="800.0" styleClass="cabecalho" stylesheets="@../css/principal.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="238.0" prefHeight="49.0" prefWidth="95.0" text="oaching" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="237.0" layoutY="33.0" prefHeight="49.0" prefWidth="537.0" text="elência em Atingir Metas Pessoais e Profissionais" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="186.0" layoutY="-17.0" prefHeight="105.0" prefWidth="62.0" text="C" textFill="WHITE">
+               <font>
+                  <Font size="83.0" />
+               </font>
+            </Label>
+            <Label layoutX="164.0" layoutY="33.0" prefHeight="49.0" prefWidth="28.0" text="Ex" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="1.0" prefHeight="49.0" prefWidth="114.0" text="Programa" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="79.0" prefWidth="800.0" styleClass="rodape" stylesheets="@../css/principal.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="141.0" layoutY="6.0" text="Sandro Donizete" textFill="#e81010">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="164.0" layoutY="41.0" text="11 3885 0040">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="79.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/alvo.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="445.0" layoutY="11.0" text="coach@sandrodonizete.com">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="396.0" layoutY="39.0" text="Praça Oswaldo Cruz, 124 Cj. 154 - Paraiso - SP">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="65.0" layoutX="353.0" layoutY="26.0" onMouseClicked="#AbrirGoogleMaps" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
+               <image>
+                  <Image url="@../images/red-dot-icon.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </bottom>
+</BorderPane>

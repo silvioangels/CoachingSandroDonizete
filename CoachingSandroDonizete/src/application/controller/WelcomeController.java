@@ -11,7 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class WelcomeController extends AppAbstraticController {
+public class WelcomeController extends AbstraticController {
 	
 	private static Stage stage;
 	
@@ -50,6 +50,7 @@ public class WelcomeController extends AppAbstraticController {
 		try {
 			
 			CadastroController.getInstance().start(new Stage());
+			WelcomeController.stage.hide();
 			
 		} catch (Exception e) {
 			e.printStackTrace();

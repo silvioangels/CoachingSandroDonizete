@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-public class PreLoaderController extends AppAbstraticController {
+public class PreLoaderController extends AbstraticController {
 
 	// Variaveis Gerais
 	private ProgressBar barraProgresso;
