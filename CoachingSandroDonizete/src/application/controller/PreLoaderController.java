@@ -42,11 +42,12 @@ public class PreLoaderController extends AbstraticController {
 			layoutTelaAbertura = new VBox();
 			layoutTelaAbertura.getChildren().addAll(imagemAbertura,barraProgresso, textoProgresso);
 			layoutTelaAbertura.setEffect(new DropShadow());
-			layoutTelaAbertura.setStyle("-fx-padding: 5; "
-					+ "-fx-background-color: cornsilk; "
-					+ "-fx-border-width:5; " + "-fx-border-color: "
-					+ "linear-gradient(" + "to bottom, " + "chocolate, "
-					+ "derive(chocolate, 50%)" + ");");
+			layoutTelaAbertura.setStyle(
+				"-fx-padding: 5; " +
+				"-fx-background-color: cornsilk; " +
+				"-fx-border-width:5; " + 
+				"-fx-border-color: linear-gradient( to bottom, chocolate,  derive(chocolate, 50%));"
+			);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -8,7 +8,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class PrincipalController extends AbstraticController {
@@ -16,6 +18,12 @@ public class PrincipalController extends AbstraticController {
 	private static Stage stage;
 	
 	private static PrincipalController instance;
+	
+	@FXML
+	private TitledPane titledPaneCliente;
+	
+	@FXML
+	private AnchorPane telaConteudoPrincipal;
 	
 	public static PrincipalController getInstance(){
 		
@@ -30,9 +38,11 @@ public class PrincipalController extends AbstraticController {
 	public void start(Stage initStage) throws Exception {
 		try {
 			
+			telaConteudoPrincipal = new AnchorPane();
 			Parent parent = FXMLLoader.load(getClass().getResource(TELA_PRINCIPAL));
 			initStage.setScene(new Scene(parent));
-			initStage.setTitle("Tela de Cadastro");
+			initStage.setResizable(false);
+			initStage.setTitle("Tela de Cadastro");			
 			initStage.show();
 			
 			setStage(initStage);

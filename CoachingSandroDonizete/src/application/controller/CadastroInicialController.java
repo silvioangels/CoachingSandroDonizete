@@ -10,11 +10,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class CadastroController extends AbstraticController {
+public class CadastroInicialController extends AbstraticController {
 	
 	private static Stage stage;
 	
-	private static CadastroController instance;
+	private static CadastroInicialController instance;
 	
 	@FXML
 	private TextField inputNome;
@@ -22,10 +22,10 @@ public class CadastroController extends AbstraticController {
 	@FXML
 	private DatePicker dtNascimento;
 	
-	public static CadastroController getInstance(){
+	public static CadastroInicialController getInstance(){
 		
 		if(instance == null){
-			instance = new CadastroController();
+			instance = new CadastroInicialController();
 		}
 		
 		return instance;
@@ -55,7 +55,7 @@ public class CadastroController extends AbstraticController {
 			try {
 				
 				PrincipalController.getInstance().start(new Stage());
-				CadastroController.stage.hide();
+				CadastroInicialController.stage.hide();
 			
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -69,7 +69,7 @@ public class CadastroController extends AbstraticController {
 		try {
 			
 			WelcomeController.getStage().show();
-			CadastroController.stage.hide();
+			CadastroInicialController.stage.hide();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -81,7 +81,7 @@ public class CadastroController extends AbstraticController {
 	}
 
 	public static void setStage(Stage stage) {
-		CadastroController.stage = stage;
+		CadastroInicialController.stage = stage;
 	}
 
 	public static void main(String[] args) {

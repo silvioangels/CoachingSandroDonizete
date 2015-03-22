@@ -49,7 +49,7 @@ public class WelcomeController extends AbstraticController {
 
 		try {
 			
-			CadastroController.getInstance().start(new Stage());
+			CadastroInicialController.getInstance().start(new Stage());
 			WelcomeController.stage.hide();
 			
 		} catch (Exception e) {
