@@ -17,3 +17,10 @@
 	-fx-cursor: hand;
 }
 
+.alvo {
+	-fx-image: url("../images/alvo.jpg");
+}
+
+.maps {
+	-fx-image: url("../images/red-dot-icon.jpg");
+}

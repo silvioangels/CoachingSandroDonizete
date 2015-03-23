@@ -3,15 +3,20 @@ package application.controller;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import application.navigation.ConteudoNavigator;
 
 public class PrincipalController extends AbstraticController {
 	
@@ -20,10 +25,13 @@ public class PrincipalController extends AbstraticController {
 	private static PrincipalController instance;
 	
 	@FXML
+	private AnchorPane anchorPaneCabecalho;
+	
+	@FXML
 	private TitledPane titledPaneCliente;
 	
 	@FXML
-	private AnchorPane telaConteudoPrincipal;
+    private StackPane conteudoStackPane;
 	
 	public static PrincipalController getInstance(){
 		
@@ -33,14 +41,14 @@ public class PrincipalController extends AbstraticController {
 		
 		return instance;
 	}
-
+	
 	@Override
 	public void start(Stage initStage) throws Exception {
 		try {
-			
-			telaConteudoPrincipal = new AnchorPane();
-			Parent parent = FXMLLoader.load(getClass().getResource(TELA_PRINCIPAL));
-			initStage.setScene(new Scene(parent));
+
+			//Parent parent = FXMLLoader.load(getClass().getResource(TELA_PRINCIPAL));
+			//initStage.setScene(new Scene(parent));
+			initStage.setScene(criarCenaPrincipal((carregarTelaPrincipal())));
 			initStage.setResizable(false);
 			initStage.setTitle("Tela de Cadastro");			
 			initStage.show();
@@ -53,6 +61,33 @@ public class PrincipalController extends AbstraticController {
 		
 	}
 	
+	private Pane carregarTelaPrincipal() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        
+        URL location = PrincipalController.class.getResource("application");
+        loader.setLocation(location);
+ 
+        Pane mainPane = (Pane) loader.load(getClass().getResourceAsStream(TELA_PRINCIPAL));
+        PrincipalController mainController = loader.getController();
+ 
+        ConteudoNavigator.setMainController(mainController);
+        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_BOAS_VINDAS);
+ 
+        return mainPane;
+    }
+	
+	private Scene criarCenaPrincipal(Pane telaPrincipal) {
+        Scene cenaPrincipal = new Scene(telaPrincipal);
+ 
+        cenaPrincipal.getStylesheets().add("application/view/css/principal.css");
+ 
+        return cenaPrincipal;
+    }
+	
+	public void abrirConteudoPrincipal(Node node) {
+		conteudoStackPane.getChildren().setAll(node);
+    }
+	
 	@FXML
 	private void AbrirGoogleMaps(MouseEvent event) {
 		try {
@@ -61,6 +96,16 @@ public class PrincipalController extends AbstraticController {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+    void cadastroCliente(ActionEvent event) {
+        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_CLIENTE);
+    }
+	
+	@FXML
+    void dadosPrograma(ActionEvent event) {
+        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_DADOS_PROGRAMA);
+    }
 	
 	
 	public static Stage getStage() {
