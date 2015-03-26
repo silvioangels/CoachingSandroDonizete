@@ -3,7 +3,6 @@ package application.controller;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,8 +45,6 @@ public class PrincipalController extends AbstraticController {
 	public void start(Stage initStage) throws Exception {
 		try {
 
-			//Parent parent = FXMLLoader.load(getClass().getResource(TELA_PRINCIPAL));
-			//initStage.setScene(new Scene(parent));
 			initStage.setScene(criarCenaPrincipal((carregarTelaPrincipal())));
 			initStage.setResizable(false);
 			initStage.setTitle("Tela de Cadastro");			
@@ -63,9 +60,6 @@ public class PrincipalController extends AbstraticController {
 	
 	private Pane carregarTelaPrincipal() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        
-        URL location = PrincipalController.class.getResource("application");
-        loader.setLocation(location);
  
         Pane mainPane = (Pane) loader.load(getClass().getResourceAsStream(TELA_PRINCIPAL));
         PrincipalController mainController = loader.getController();

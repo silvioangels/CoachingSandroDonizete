@@ -24,7 +24,7 @@
          </font>
       </Label>
       <TextField fx:id="inputNome" layoutX="109.0" layoutY="70.0" prefHeight="25.0" prefWidth="398.0" />
-      <DatePicker fx:id="dtNascimento" layoutX="109.0" layoutY="105.0" />
+      <DatePicker fx:id="dtNascimento" layoutX="109.0" layoutY="105.0"/>
       <Button text="Criar" onAction="#criar" layoutX="18.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0"  />
       <Button text="Cancelar" onAction="#cancelar" layoutX="134.0" layoutY="146.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="73.0"  />
    </children>

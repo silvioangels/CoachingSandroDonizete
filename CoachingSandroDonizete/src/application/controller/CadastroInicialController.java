@@ -10,24 +10,26 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.JOptionPane;
+
 public class CadastroInicialController extends AbstraticController {
-	
+
 	private static Stage stage;
-	
+
 	private static CadastroInicialController instance;
-	
+
 	@FXML
 	private TextField inputNome;
-	
+
 	@FXML
 	private DatePicker dtNascimento;
-	
-	public static CadastroInicialController getInstance(){
-		
-		if(instance == null){
+
+	public static CadastroInicialController getInstance() {
+
+		if (instance == null) {
 			instance = new CadastroInicialController();
 		}
-		
+
 		return instance;
 	}
 
@@ -36,46 +38,60 @@ public class CadastroInicialController extends AbstraticController {
 		try {
 			
 			Parent parent = FXMLLoader.load(getClass().getResource(TELA_CADASTRO_INICIAL));
+			
 			initStage.setScene(new Scene(parent));
 			initStage.setTitle("Tela de Cadastro");
 			initStage.show();
 			
 			setStage(initStage);
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 	
 	@FXML
 	private void criar() {
-			
-			try {
-				
-				PrincipalController.getInstance().start(new Stage());
-				CadastroInicialController.stage.hide();
-			
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-	}
-	
-	@FXML
-	private void cancelar() {
 		
 		try {
 			
+			if(inputNome.getText().isEmpty()){
+				JOptionPane.showMessageDialog(null, "Favor Inserir algum Nome Valido","Erro", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			if(dtNascimento.getValue() == null){
+				JOptionPane.showMessageDialog(null, "Favor Inserir a data de nascimento corretamente no formato dd/mm/aaaa","Erro", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			/*LocalDate localDate = dtNascimento.getValue();
+			Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
+			Date date = Date.from(instant);*/
+			
+
+			PrincipalController.getInstance().start(new Stage());
+			CadastroInicialController.stage.hide();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@FXML
+	private void cancelar() {
+
+		try {
+
 			WelcomeController.getStage().show();
 			CadastroInicialController.stage.hide();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static Stage getStage() {
 		return stage;
 	}
