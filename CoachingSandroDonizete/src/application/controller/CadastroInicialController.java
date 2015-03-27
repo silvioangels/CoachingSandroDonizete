@@ -56,27 +56,33 @@ public class CadastroInicialController extends AbstraticController {
 		
 		try {
 			
-			if(inputNome.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "Favor Inserir algum Nome Valido","Erro", JOptionPane.ERROR_MESSAGE);
-				return;
+			if(isValidarFrontEnd()){
+				
+				PrincipalController.getInstance().start(new Stage());
+				CadastroInicialController.stage.hide();
+				
 			}
-			if(dtNascimento.getValue() == null){
-				JOptionPane.showMessageDialog(null, "Favor Inserir a data de nascimento corretamente no formato dd/mm/aaaa","Erro", JOptionPane.ERROR_MESSAGE);
-				return;
-			}
-			
-			/*LocalDate localDate = dtNascimento.getValue();
-			Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
-			Date date = Date.from(instant);*/
-			
-
-			PrincipalController.getInstance().start(new Stage());
-			CadastroInicialController.stage.hide();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+	}
+	
+	private boolean isValidarFrontEnd(){
+		
+		boolean valido = true;
+		
+		if(inputNome.getText().isEmpty() || inputNome.getText().trim().isEmpty()){
+			JOptionPane.showMessageDialog(null, "Favor Inserir algum Nome Valido","Erro", JOptionPane.ERROR_MESSAGE);
+			valido = false;
+		}else if(dtNascimento.getValue() == null){
+			JOptionPane.showMessageDialog(null, "Favor Inserir a data de nascimento corretamente no formato dd/mm/aaaa","Erro", JOptionPane.ERROR_MESSAGE);
+			valido = false;
+		}
+		
+		return valido;
+		
 	}
 
 	@FXML
