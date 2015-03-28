@@ -38,7 +38,7 @@ public class CadastroInicialController extends AbstraticController {
 		try {
 			
 			Parent parent = FXMLLoader.load(getClass().getResource(TELA_CADASTRO_INICIAL));
-			
+			initStage.setResizable(false);
 			initStage.setScene(new Scene(parent));
 			initStage.setTitle("Tela de Cadastro");
 			initStage.show();

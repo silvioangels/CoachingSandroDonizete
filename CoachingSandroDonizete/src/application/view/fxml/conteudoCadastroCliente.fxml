@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoCadastroClienteController">
    <children>
       <Label layoutX="14.0" layoutY="27.0" text="Cadastro Cliente" />
-      <Button layoutX="521.0" layoutY="387.0" mnemonicParsing="false" onAction="#testarBotao" text="Button" />
-      <Button layoutX="521.0" layoutY="32.0" mnemonicParsing="false" onAction="#testarBotao" text="Button" />
+      <!--  Button layoutX="521.0" layoutY="387.0" mnemonicParsing="false" onAction="#testarBotao" text="Button" /-->
+      <!-- Button layoutX="521.0" layoutY="32.0" mnemonicParsing="false" onAction="#testarBotao" text="Button" /-->
    </children>
 </AnchorPane>

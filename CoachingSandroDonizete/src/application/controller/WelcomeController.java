@@ -31,8 +31,8 @@ public class WelcomeController extends AbstraticController {
 		try {
 			
 			Parent parent = FXMLLoader.load(PreLoaderController.class.getResource(TELA_ABERTURA));
-			
 			initStage.setScene(new Scene(parent));
+			initStage.setResizable(false);
 			initStage.setTitle("Tela de Boas Vindas");
 			initStage.show();
 			
