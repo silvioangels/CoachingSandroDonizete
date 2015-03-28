@@ -1,16 +1,10 @@
 .cabecalho{
 	-fx-background-image: url("../images/personalCoaching.jpg");
-	-fx-background-size: 820 110;
+	-fx-background-size: 100% 100%;
 }
 
 .rodape{
 	-fx-background-color: white
-}
-
-
-.pane {
-	-fx-background-image: url("../images/papel-de-parede-vermelho.jpg");
-	-fx-background-size: 800 600;
 }
 
 .btnHand {
