@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,8 +9,48 @@
 
 <AnchorPane prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoCadastroClienteController">
    <children>
-      <Label layoutX="14.0" layoutY="27.0" text="Cadastro Cliente" />
-      <!--  Button layoutX="521.0" layoutY="387.0" mnemonicParsing="false" onAction="#testarBotao" text="Button" /-->
-      <!-- Button layoutX="521.0" layoutY="32.0" mnemonicParsing="false" onAction="#testarBotao" text="Button" /-->
+      <Label layoutX="20.0" layoutY="19.0" text="Cadastro Cliente">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font></Label>
+      <ImageView fitHeight="8.0" fitWidth="567.0" layoutX="20.0" layoutY="57.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/separador_azul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="20.0" layoutY="82.0" text="Nome" />
+      <TextField layoutX="81.0" layoutY="78.0" prefHeight="25.0" prefWidth="505.0" />
+      <Label layoutX="20.0" layoutY="121.0" text="Dt.Nasc." />
+      <DatePicker layoutX="81.0" layoutY="117.0" prefHeight="25.0" prefWidth="182.0" />
+      <Label layoutX="20.0" layoutY="157.0" text="Escolaridade" />
+      <Label layoutX="274.0" layoutY="157.0" text="Profissão" />
+      <Label layoutX="271.0" layoutY="121.0" text="Tel" />
+      <TextField layoutX="292.0" layoutY="117.0" prefHeight="25.0" prefWidth="30.0" />
+      <TextField layoutX="330.0" layoutY="117.0" prefHeight="25.0" prefWidth="95.0" />
+      <Label layoutX="431.0" layoutY="121.0" text="Cel" />
+      <TextField layoutX="491.0" layoutY="117.0" prefHeight="25.0" prefWidth="95.0" />
+      <TextField layoutX="453.0" layoutY="117.0" prefHeight="25.0" prefWidth="30.0" />
+      <ComboBox layoutX="93.0" layoutY="153.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField layoutX="336.0" layoutY="153.0" prefHeight="25.0" prefWidth="249.0" />
+      <TextField layoutX="80.0" layoutY="185.0" prefHeight="25.0" prefWidth="189.0" />
+      <Label layoutX="19.0" layoutY="189.0" text="CEP" />
+      <Label layoutX="274.0" layoutY="188.0" text="Endereço" />
+      <TextField layoutX="335.0" layoutY="184.0" prefHeight="25.0" prefWidth="249.0" />
+      <Label layoutX="19.0" layoutY="221.0" text="Bairro" />
+      <TextField layoutX="80.0" layoutY="217.0" prefHeight="25.0" prefWidth="189.0" />
+      <TextField layoutX="335.0" layoutY="217.0" prefHeight="25.0" prefWidth="127.0" />
+      <Label layoutX="276.0" layoutY="221.0" text="Cidade" />
+      <Label layoutX="468.0" layoutY="221.0" text="Estado" />
+      <ComboBox layoutX="510.0" layoutY="217.0" prefHeight="25.0" prefWidth="75.0" />
+      <TextField layoutX="80.0" layoutY="252.0" prefHeight="25.0" prefWidth="189.0" />
+      <Label layoutX="19.0" layoutY="256.0" text="E-Mail" />
+      <Label layoutX="278.0" layoutY="256.0" text="Site" />
+      <TextField layoutX="335.0" layoutY="252.0" prefHeight="25.0" prefWidth="249.0" />
+      <Label layoutX="19.0" layoutY="295.0" text="Skype" />
+      <TextField layoutX="80.0" layoutY="291.0" prefHeight="25.0" prefWidth="189.0" />
+      <Label layoutX="279.0" layoutY="295.0" text="Twitter" />
+      <Label layoutX="21.0" layoutY="333.0" text="Como nos Conheceu" />
+      <TextField layoutX="335.0" layoutY="291.0" prefHeight="25.0" prefWidth="249.0" />
+      <TextArea layoutX="136.0" layoutY="333.0" prefHeight="71.0" prefWidth="448.0" />
    </children>
 </AnchorPane>

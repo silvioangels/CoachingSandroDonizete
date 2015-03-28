@@ -65,7 +65,7 @@ public class PrincipalController extends AbstraticController {
         PrincipalController mainController = loader.getController();
  
         ConteudoNavigator.setMainController(mainController);
-        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_BOAS_VINDAS);
+        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_CLIENTE);
  
         return mainPane;
     }
