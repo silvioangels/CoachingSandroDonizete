@@ -46,7 +46,7 @@ public class PreLoaderController extends AbstraticController {
 				"-fx-padding: 5; " +
 				"-fx-background-color: cornsilk; " +
 				"-fx-border-width:5; " + 
-				"-fx-border-color: linear-gradient( to bottom, chocolate,  derive(chocolate, 50%));"
+				"-fx-border-color: linear-gradient( to bottom, blue,  derive(blue, 50%));"
 			);
 			
 		} catch (Exception e) {
@@ -62,18 +62,18 @@ public class PreLoaderController extends AbstraticController {
 			@Override
 			protected ObservableList<String> call() throws InterruptedException {
 				ObservableList<String> mensagensCarregadas  = FXCollections.<String> observableArrayList();
-				ObservableList<String> mensagensDisponiveis = FXCollections.observableArrayList("Tela", "Imagens", "Links","lista de mensagens");
+				ObservableList<String> mensagensDisponiveis = FXCollections.observableArrayList("10%", "20%", "30%","40%","60%","80%","100%");
 
-				updateMessage("Iniciando Sistema . . .");
+				updateMessage("Iniciando Aplicativo . . .");
 				for (int i = 0; i < mensagensDisponiveis.size(); i++) {
 					Thread.sleep(400);
 					updateProgress(i + 1, mensagensDisponiveis.size());
 					String proximaMsg = mensagensDisponiveis.get(i);
 					mensagensCarregadas.add(proximaMsg);
-					updateMessage("Carregando Sistema . . . carregado " + proximaMsg);
+					updateMessage("Carregando Aplicativo . . . " + proximaMsg);
 				}
 				Thread.sleep(400);
-				updateMessage("Sistema Carregado.");
+				updateMessage("Aplicativo Iniciado");
 
 				return mensagensCarregadas;
 			}
