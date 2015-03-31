@@ -46,7 +46,7 @@ public class PrincipalController extends AbstraticController {
 		try {
 
 			initStage.setScene(criarCenaPrincipal((carregarTelaPrincipal())));
-			initStage.setResizable(false);
+			initStage.setMaximized(true);
 			initStage.setTitle("Tela de Cadastro");			
 			initStage.show();
 			
