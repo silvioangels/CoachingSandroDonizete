@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="200.0" prefWidth="600.0" styleClass="pane" stylesheets="@../css/cadastroInicial.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CadastroInicialController">
    <children>
-      <Label layoutX="9.0" layoutY="7.0" text="Insira as Informacoes para o Cadastro" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="9.0" layoutY="7.0" text="Insira as Informacoes para realizar uma nova Sessão" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
@@ -25,7 +25,7 @@
       </Label>
       <TextField fx:id="inputNome" layoutX="109.0" layoutY="70.0" prefHeight="25.0" prefWidth="398.0" />
       <DatePicker fx:id="dtNascimento" layoutX="109.0" layoutY="105.0"/>
-      <Button text="Criar" onAction="#criar" layoutX="18.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0"  />
+      <Button text="Iniciar" onAction="#criar" layoutX="18.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0"  />
       <Button text="Cancelar" onAction="#cancelar" layoutX="134.0" layoutY="146.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="73.0"  />
    </children>
 </AnchorPane>
