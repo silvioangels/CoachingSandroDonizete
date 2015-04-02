@@ -1,8 +1,6 @@
 package application.controller;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TitledPane;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -65,7 +62,7 @@ public class PrincipalController extends AbstraticController {
         PrincipalController mainController = loader.getController();
  
         ConteudoNavigator.setMainController(mainController);
-        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_CLIENTE);
+        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_INICIO);
  
         return mainPane;
     }
@@ -83,22 +80,18 @@ public class PrincipalController extends AbstraticController {
     }
 	
 	@FXML
-	private void AbrirGoogleMaps(MouseEvent event) {
-		try {
-			java.awt.Desktop.getDesktop().browse(new URI(LINK_MAPS));
-		} catch (IOException | URISyntaxException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@FXML
-    void cadastroCliente(ActionEvent event) {
-        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_CLIENTE);
+    void abrirTelaCadastroNovoCoachee(ActionEvent event) {
+        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_COACHEE);
     }
 	
 	@FXML
-    void dadosPrograma(ActionEvent event) {
+    void abrirTelaDadosPrograma(ActionEvent event) {
         ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_DADOS_PROGRAMA);
+    }
+	
+	@FXML
+    void abrirTelaInicio(ActionEvent event) {
+        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_INICIO);
     }
 	
 	

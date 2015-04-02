@@ -10,17 +10,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import application.navigation.ConteudoNavigator;
 
-public class WelcomeController extends AbstraticController {
+public class ConteudoInicioController extends AbstraticController {
 	
 	private static Stage stage;
 	
-	private static WelcomeController instance;
+	private static ConteudoInicioController instance;
 	
-	public static WelcomeController getInstance(){
+	public static ConteudoInicioController getInstance(){
 		
 		if(instance == null){
-			instance = new WelcomeController();
+			instance = new ConteudoInicioController();
 		}
 		
 		return instance;
@@ -45,12 +46,11 @@ public class WelcomeController extends AbstraticController {
 	}
 	
 	@FXML
-	private void criarNovoCadastro() {
+	private void cadastroNovoCoachee() {
 
 		try {
 			
-			CadastroInicialController.getInstance().start(new Stage());
-			WelcomeController.stage.hide();
+			ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_COACHEE);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -85,12 +85,21 @@ public class WelcomeController extends AbstraticController {
 		}
 	}
 	
+	@FXML
+	private void AbrirGoogleMaps(MouseEvent event) {
+		try {
+			java.awt.Desktop.getDesktop().browse(new URI(LINK_MAPS));
+		} catch (IOException | URISyntaxException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static Stage getStage() {
 		return stage;
 	}
 
 	public static void setStage(Stage stage) {
-		WelcomeController.stage = stage;
+		ConteudoInicioController.stage = stage;
 	}
 	
 	public static void main(String[] args) {

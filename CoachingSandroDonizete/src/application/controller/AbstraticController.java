@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 public class AbstraticController extends Application{
 	
 	// Variaveis Estaticas
-	protected static final String TELA_ABERTURA   = "/application/view/fxml/welcome.fxml";
+	protected static final String TELA_ABERTURA   = "/application/view/fxml/conteudoBoasVindas.fxml";
 	protected static final String TELA_CADASTRO_INICIAL   = "/application/view/fxml/cadastroInicial.fxml";
 	protected static final String TELA_PRINCIPAL  = "/application/view/fxml/principal.fxml";
 	protected static final String IMAGEM_ABERTURA = "/application/view/images/delphos_coaching_logo.jpg";

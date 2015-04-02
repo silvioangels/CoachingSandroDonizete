@@ -8,8 +8,8 @@ import application.controller.PrincipalController;
 
 public class ConteudoNavigator {
 
-	public static final String CONTEUDO_BOAS_VINDAS  	 = "/application/view/fxml/conteudoBoasVindas.fxml";
-    public static final String CONTEUDO_CADASTRO_CLIENTE = "/application/view/fxml/conteudoCadastroCliente.fxml";
+	public static final String CONTEUDO_INICIO  	 = "/application/view/fxml/conteudoInicio.fxml";
+    public static final String CONTEUDO_CADASTRO_COACHEE = "/application/view/fxml/conteudoCadastroCoachee.fxml";
     public static final String CONTEUDO_DADOS_PROGRAMA = "/application/view/fxml/conteudoDadosPrograma.fxml";
     
     private static PrincipalController principalController;

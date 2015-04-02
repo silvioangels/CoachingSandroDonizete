@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javax.swing.JOptionPane;
 
 
-public class ConteudoCadastroClienteController extends AbstraticController{
+public class ConteudoCadastroCoacheeController extends AbstraticController{
 	
 	@FXML
 	public void testarBotao(ActionEvent event){
