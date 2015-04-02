@@ -44,7 +44,7 @@ public class PrincipalController extends AbstraticController {
 
 			initStage.setScene(criarCenaPrincipal((carregarTelaPrincipal())));
 			initStage.setMaximized(true);
-			initStage.setTitle("Tela de Cadastro");			
+			initStage.setTitle("Delphos Coaching - Excelência em Atingir Metas Pessoais e Profissionais");			
 			initStage.show();
 			
 			setStage(initStage);

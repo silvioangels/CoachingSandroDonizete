@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,9 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="896.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoInicioController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoInicioController">
 	<children>
-		<Button layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" text="Cadastro de novo Coachee" styleClass="btGreen" />
+		<Button layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" styleClass="btnGreen,btnRedColor " text="Cadastro de novo Coachee" />
       <TableView layoutX="82.0" layoutY="139.0" prefHeight="198.0" prefWidth="622.0">
         <columns>
           <TableColumn editable="false" prefWidth="411.0" resizable="false" text="Nome" />
@@ -60,7 +61,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <ImageView fitHeight="8.0" fitWidth="862.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true">
+      <ImageView fitHeight="7.0" fitWidth="934.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true">
          <image>
             <Image url="@../images/separador_azul.jpg" />
          </image>
@@ -70,5 +71,11 @@
             <Font name="System Bold Italic" size="26.0" />
          </font>
       </Label>
+      <Label layoutX="755.0" layoutY="139.0" text="Quantidade Coachees Ativos">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="842.0" layoutY="182.0" text="0" />
 	</children>
 </AnchorPane>
