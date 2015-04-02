@@ -5,4 +5,16 @@
 
 .btnHand {
 	-fx-cursor: hand;
+	
+}
+
+
+.btGreen:hover {
+	-fx-background-color: green;
+	-fx-text-fill: white;
+}
+
+.btnRed:hover {
+	-fx-background-color: red;
+	-fx-text-fill: white;
 }

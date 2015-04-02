@@ -8,56 +8,66 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="800" prefWidth="896.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoInicioController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="896.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoInicioController">
 	<children>
-		<Button layoutX="247.0" layoutY="294.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" text="Cadastro de novo Coachee" />
-      <TableView layoutX="82.0" layoutY="80.0" prefHeight="198.0" prefWidth="622.0">
+		<Button layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" text="Cadastro de novo Coachee" styleClass="btGreen" />
+      <TableView layoutX="82.0" layoutY="139.0" prefHeight="198.0" prefWidth="622.0">
         <columns>
           <TableColumn editable="false" prefWidth="411.0" resizable="false" text="Nome" />
             <TableColumn prefWidth="114.0" text="Dt. Ultima Sessão" />
             <TableColumn prefWidth="96.0" text="Numero Sessão" />
         </columns>
       </TableView>
-      <Label layoutX="14.0" layoutY="382.0" text="© 2015  por Sandro Donizete" />
-      <ImageView fitHeight="55.0" fitWidth="58.0" layoutX="339.0" layoutY="365.0" onMouseClicked="#OpenWebSite" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
+      <Label layoutX="14.0" layoutY="659.0" text="© 2015  por Sandro Donizete" />
+      <ImageView fitHeight="55.0" fitWidth="58.0" layoutX="339.0" layoutY="642.0" onMouseClicked="#OpenWebSite" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
          <image>
             <Image url="@../images/www-icon.jpg" />
          </image>
       </ImageView>
       
-      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="399.0" layoutY="366.0" onMouseClicked="#OpenFacebook" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="399.0" layoutY="643.0" onMouseClicked="#OpenFacebook" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
          <image>
             <Image url="@../images/facebook-icon.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="457.0" layoutY="368.0" onMouseClicked="#OpenYouTube" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
+      <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="457.0" layoutY="645.0" onMouseClicked="#OpenYouTube" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
          <image>
             <Image url="@../images/youtube-icon.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="513.0" layoutY="369.0" onMouseClicked="#AbrirGoogleMaps" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
+      <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="513.0" layoutY="646.0" onMouseClicked="#AbrirGoogleMaps" pickOnBounds="true" preserveRatio="true" styleClass="btnHand">
       <image>
             <Image url="@../images/red-dot-icon.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="196.0" layoutY="393.0" text="11 3885 0040">
+      <Label layoutX="196.0" layoutY="670.0" text="11 3885 0040">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="173.0" layoutY="358.0" text="Sandro Donizete">
+      <Label layoutX="173.0" layoutY="635.0" text="Sandro Donizete">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="558.0" layoutY="399.0" text="Praça Oswaldo Cruz, 124 Cj. 154 - Paraiso - SP">
+      <Label layoutX="558.0" layoutY="676.0" text="Praça Oswaldo Cruz, 124 Cj. 154 - Paraiso - SP">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="607.0" layoutY="371.0" text="coach@sandrodonizete.com">
+      <Label layoutX="607.0" layoutY="648.0" text="coach@sandrodonizete.com">
          <font>
             <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="8.0" fitWidth="862.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/separador_azul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="30.0" layoutY="29.0" text="Inicio">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
          </font>
       </Label>
 	</children>
