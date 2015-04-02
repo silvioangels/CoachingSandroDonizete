@@ -88,7 +88,7 @@ public class PreLoaderController extends AbstraticController {
 		try {
 			Stage mainStage = new Stage(StageStyle.DECORATED);
 			
-			ConteudoInicioController.getInstance().start(mainStage);
+			PrincipalController.getInstance().start(mainStage);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

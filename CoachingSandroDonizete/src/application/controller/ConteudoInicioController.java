@@ -31,10 +31,8 @@ public class ConteudoInicioController extends AbstraticController {
 	public void start(Stage initStage) throws Exception {
 		try {
 			
-			Parent parent = FXMLLoader.load(PreLoaderController.class.getResource(TELA_ABERTURA));
+			Parent parent = FXMLLoader.load(PreLoaderController.class.getResource(TELA_PRINCIPAL));
 			initStage.setScene(new Scene(parent));
-			initStage.setResizable(false);
-			initStage.setTitle("Tela de Inicio");
 			initStage.show();
 			
 			setStage(initStage);
