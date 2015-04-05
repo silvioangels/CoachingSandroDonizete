@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoInicioController">
 	<children>
-		<Button layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" styleClass="btnGreen,btnRedColor " text="Cadastro de novo Coachee" />
+		<Button layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" styleClass="btnRed" text="Cadastro de novo Coachee" />
       <TableView layoutX="82.0" layoutY="139.0" prefHeight="198.0" prefWidth="622.0">
         <columns>
           <TableColumn editable="false" prefWidth="411.0" resizable="false" text="Nome" />
