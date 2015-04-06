@@ -1,4 +1,4 @@
-package application.enums;
+package application.enumeration;
 
 public enum ResoursesEnum {
 	
@@ -20,12 +20,12 @@ public enum ResoursesEnum {
 		return caminhoRecurso;
 	}
 
-	public static ResoursesEnum getValueByName(String caminho){
+	public static ResoursesEnum getDadosResoursesFromString(String descricao){
 		
 		ResoursesEnum retorno = null;
 		
 		for (ResoursesEnum telaController : ResoursesEnum.values()) {
-			if(telaController.getRecurso().equals(caminho)){
+			if(telaController.getRecurso().contains(descricao)){
 				retorno = telaController;
 			}
 		}

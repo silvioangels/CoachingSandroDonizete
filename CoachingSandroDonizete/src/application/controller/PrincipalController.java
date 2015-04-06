@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import application.enums.TelaEnum;
+import application.enumeration.TelaEnum;
 import application.navigation.ConteudoNavigator;
 
 public class PrincipalController extends AbstraticController {

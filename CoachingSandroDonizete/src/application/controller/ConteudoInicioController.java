@@ -10,8 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import application.enums.ResoursesEnum;
-import application.enums.TelaEnum;
+import application.enumeration.ResoursesEnum;
+import application.enumeration.TelaEnum;
 import application.navigation.ConteudoNavigator;
 
 public class ConteudoInicioController extends AbstraticController {

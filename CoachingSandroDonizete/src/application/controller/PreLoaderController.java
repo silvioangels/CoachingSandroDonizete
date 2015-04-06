@@ -19,7 +19,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import application.enums.ResoursesEnum;
+import application.enumeration.ResoursesEnum;
 
 public class PreLoaderController extends AbstraticController {
 

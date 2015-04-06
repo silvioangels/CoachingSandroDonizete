@@ -1,4 +1,4 @@
-package application.components;
+package application.list;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

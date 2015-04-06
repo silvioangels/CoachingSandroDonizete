@@ -1,4 +1,4 @@
-package application.enums;
+package application.enumeration;
 
 public enum TelaEnum {
 	
@@ -21,12 +21,12 @@ public enum TelaEnum {
 		this.caminhoFxml = caminhoFxml;
 	}
 	
-	public static TelaEnum getValueByName(String caminho){
+	public static TelaEnum getDadosTelaEnumFromString(final String descricao){
 		
 		TelaEnum retorno = null;
 		
 		for (TelaEnum telaController : TelaEnum.values()) {
-			if(telaController.getCaminhoFxml().equals(caminho)){
+			if(telaController.getCaminhoFxml().contains(descricao)){
 				retorno = telaController;
 			}
 		}
