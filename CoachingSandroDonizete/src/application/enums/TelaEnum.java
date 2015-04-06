@@ -1,12 +1,13 @@
 package application.enums;
 
-public enum TelaControllers {
+public enum TelaEnum {
 	
+	TELA_PRINCIPAL("/application/view/fxml/principal.fxml"),
 	CONTEUDO_INICIO("/application/view/fxml/conteudoInicio.fxml"),
 	CONTEUDO_CADASTRO_COACHEE("/application/view/fxml/conteudoCadastroCoachee.fxml"),
 	CONTEUDO_DADOS_PROGRAMA("/application/view/fxml/conteudoDadosPrograma.fxml");
 
-	TelaControllers(String caminhoFxml){
+	TelaEnum(String caminhoFxml){
 		this.caminhoFxml = caminhoFxml;
 	}
 	
@@ -20,11 +21,11 @@ public enum TelaControllers {
 		this.caminhoFxml = caminhoFxml;
 	}
 	
-	public static TelaControllers getValueByName(String caminho){
+	public static TelaEnum getValueByName(String caminho){
 		
-		TelaControllers retorno = null;
+		TelaEnum retorno = null;
 		
-		for (TelaControllers telaController : TelaControllers.values()) {
+		for (TelaEnum telaController : TelaEnum.values()) {
 			if(telaController.getCaminhoFxml().equals(caminho)){
 				retorno = telaController;
 			}

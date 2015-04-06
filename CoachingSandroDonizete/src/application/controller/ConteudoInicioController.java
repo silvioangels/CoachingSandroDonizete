@@ -10,7 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import application.enums.TelaControllers;
+import application.enums.ResoursesEnum;
+import application.enums.TelaEnum;
 import application.navigation.ConteudoNavigator;
 
 public class ConteudoInicioController extends AbstraticController {
@@ -32,7 +33,7 @@ public class ConteudoInicioController extends AbstraticController {
 	public void start(Stage initStage) throws Exception {
 		try {
 			
-			Parent parent = FXMLLoader.load(PreLoaderController.class.getResource(TELA_PRINCIPAL));
+			Parent parent = FXMLLoader.load(PreLoaderController.class.getResource(TelaEnum.TELA_PRINCIPAL.getCaminhoFxml()));
 			initStage.setScene(new Scene(parent));
 			initStage.show();
 			
@@ -49,7 +50,7 @@ public class ConteudoInicioController extends AbstraticController {
 
 		try {
 			
-			ConteudoNavigator.carregarCena(TelaControllers.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
+			ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,7 +61,7 @@ public class ConteudoInicioController extends AbstraticController {
 	@FXML
 	private void OpenWebSite(MouseEvent event) {
 		try {
-			java.awt.Desktop.getDesktop().browse(new URI(LINK_WEB_SITE));
+			java.awt.Desktop.getDesktop().browse(new URI(ResoursesEnum.LINK_WEB_SITE.getRecurso()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
@@ -69,7 +70,7 @@ public class ConteudoInicioController extends AbstraticController {
 	@FXML
 	private void OpenFacebook(MouseEvent event) {
 		try {
-			java.awt.Desktop.getDesktop().browse(new URI(LINK_FACEBOOK));
+			java.awt.Desktop.getDesktop().browse(new URI(ResoursesEnum.LINK_FACEBOOK.getRecurso()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
@@ -78,7 +79,7 @@ public class ConteudoInicioController extends AbstraticController {
 	@FXML
 	private void OpenYouTube(MouseEvent event) {
 		try {
-			java.awt.Desktop.getDesktop().browse(new URI(LINK_YOUTUBE));
+			java.awt.Desktop.getDesktop().browse(new URI(ResoursesEnum.LINK_YOUTUBE.getRecurso()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
@@ -87,7 +88,7 @@ public class ConteudoInicioController extends AbstraticController {
 	@FXML
 	private void AbrirGoogleMaps(MouseEvent event) {
 		try {
-			java.awt.Desktop.getDesktop().browse(new URI(LINK_MAPS));
+			java.awt.Desktop.getDesktop().browse(new URI(ResoursesEnum.LINK_MAPS.getRecurso()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}

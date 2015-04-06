@@ -19,6 +19,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import application.enums.ResoursesEnum;
 
 public class PreLoaderController extends AbstraticController {
 
@@ -30,11 +31,11 @@ public class PreLoaderController extends AbstraticController {
 	@Override
 	public void init() {
 		try {
-			ImageView imagemAbertura = new ImageView(new Image(IMAGEM_ABERTURA));
-			imagemAbertura.setFitWidth(TAMANHO_ABERTURA_COMPRIMENTO);
+			ImageView imagemAbertura = new ImageView(new Image(ResoursesEnum.IMAGEM_ABERTURA.getRecurso()));
+			imagemAbertura.setFitWidth(Double.parseDouble(ResoursesEnum.PRE_LOADER_ALTURA.getRecurso()));
 			
 			barraProgresso = new ProgressBar();
-			barraProgresso.setPrefWidth(TAMANHO_ABERTURA_COMPRIMENTO);
+			barraProgresso.setPrefWidth(Double.parseDouble(ResoursesEnum.PRE_LOADER_COMPRIMENTO.getRecurso()));
 
 			textoProgresso = new Label("Iniciando Aplicacao . . .");
 			textoProgresso.setAlignment(Pos.CENTER);
@@ -120,8 +121,8 @@ public class PreLoaderController extends AbstraticController {
 		initStage.initStyle(StageStyle.UNDECORATED);
 		final Rectangle2D bounds = Screen.getPrimary().getBounds();
 		initStage.setScene(splashScene);
-		initStage.setX(bounds.getMinX() + bounds.getWidth()  / 2 - TAMANHO_ABERTURA_COMPRIMENTO / 2);
-		initStage.setY(bounds.getMinY() + bounds.getHeight() / 2 - TAMANHO_ABERTURA_ALTURA / 2);
+		initStage.setX(bounds.getMinX() + bounds.getWidth()  / 2 - Double.parseDouble(ResoursesEnum.PRE_LOADER_COMPRIMENTO.getRecurso()) / 2);
+		initStage.setY(bounds.getMinY() + bounds.getHeight() / 2 - Double.parseDouble(ResoursesEnum.PRE_LOADER_ALTURA.getRecurso()) / 2);
 		initStage.show();
 	}
 
