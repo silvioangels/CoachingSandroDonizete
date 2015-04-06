@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "coachees")
 public class CoacheeListWrapper {
 
-	private List<CoacheePerson> coacheepersons;
+	private List<ConsultaCoachee> listaConsultaCoachee;
 	
-	@XmlElement(name = "coachee")
-	public List<CoacheePerson> getCoacheepersons() {
-		return coacheepersons;
+	@XmlElement(name = "consultacoachee")
+	public List<ConsultaCoachee> getCoacheepersons() {
+		return listaConsultaCoachee;
 	}
 
-	public void setCoacheepersons(List<CoacheePerson> coacheepersons) {
-		this.coacheepersons = coacheepersons;
+	public void setCoacheepersons(List<ConsultaCoachee> listaConsultaCoachee) {
+		this.listaConsultaCoachee = listaConsultaCoachee;
 	}
 
 }
