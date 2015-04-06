@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import application.enums.TelaControllers;
 import application.navigation.ConteudoNavigator;
 
 public class ConteudoInicioController extends AbstraticController {
@@ -48,7 +49,7 @@ public class ConteudoInicioController extends AbstraticController {
 
 		try {
 			
-			ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_COACHEE);
+			ConteudoNavigator.carregarCena(TelaControllers.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
 			
 		} catch (Exception e) {
 			e.printStackTrace();

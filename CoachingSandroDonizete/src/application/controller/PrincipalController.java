@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import application.enums.TelaControllers;
 import application.navigation.ConteudoNavigator;
 
 public class PrincipalController extends AbstraticController {
@@ -61,8 +62,8 @@ public class PrincipalController extends AbstraticController {
         Pane mainPane = (Pane) loader.load(getClass().getResourceAsStream(TELA_PRINCIPAL));
         PrincipalController mainController = loader.getController();
  
-        ConteudoNavigator.setMainController(mainController);
-        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_INICIO);
+        ConteudoNavigator.setControllerPrincipal(mainController);
+        ConteudoNavigator.carregarCena(TelaControllers.CONTEUDO_INICIO.getCaminhoFxml());
  
         return mainPane;
     }
@@ -81,17 +82,17 @@ public class PrincipalController extends AbstraticController {
 	
 	@FXML
     void abrirTelaCadastroNovoCoachee(ActionEvent event) {
-        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_CADASTRO_COACHEE);
+        ConteudoNavigator.carregarCena(TelaControllers.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
     }
 	
 	@FXML
     void abrirTelaDadosPrograma(ActionEvent event) {
-        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_DADOS_PROGRAMA);
+        ConteudoNavigator.carregarCena(TelaControllers.CONTEUDO_DADOS_PROGRAMA.getCaminhoFxml());
     }
 	
 	@FXML
     void abrirTelaInicio(ActionEvent event) {
-        ConteudoNavigator.carregarCena(ConteudoNavigator.CONTEUDO_INICIO);
+        ConteudoNavigator.carregarCena(TelaControllers.CONTEUDO_INICIO.getCaminhoFxml());
     }
 	
 	
