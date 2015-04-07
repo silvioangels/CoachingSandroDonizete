@@ -19,8 +19,6 @@ public class PrincipalController extends AbstraticController {
 	
 	private static Stage stage;
 	
-	private static PrincipalController instance;
-	
 	@FXML
 	private AnchorPane anchorPaneCabecalho;
 	
@@ -29,15 +27,6 @@ public class PrincipalController extends AbstraticController {
 	
 	@FXML
     private StackPane conteudoStackPane;
-	
-	public static PrincipalController getInstance(){
-		
-		if(instance == null){
-			instance = new PrincipalController();
-		}
-		
-		return instance;
-	}
 	
 	@Override
 	public void start(Stage initStage) throws Exception {

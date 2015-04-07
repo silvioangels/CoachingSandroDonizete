@@ -32,7 +32,7 @@ public class PreLoaderController extends AbstraticController {
 	public void init() {
 		try {
 			ImageView imagemAbertura = new ImageView(new Image(ResoursesEnum.IMAGEM_ABERTURA.getRecurso()));
-			imagemAbertura.setFitWidth(Double.parseDouble(ResoursesEnum.PRE_LOADER_ALTURA.getRecurso()));
+			imagemAbertura.setFitWidth(Double.parseDouble(ResoursesEnum.PRE_LOADER_COMPRIMENTO.getRecurso()));
 			
 			barraProgresso = new ProgressBar();
 			barraProgresso.setPrefWidth(Double.parseDouble(ResoursesEnum.PRE_LOADER_COMPRIMENTO.getRecurso()));
@@ -89,7 +89,7 @@ public class PreLoaderController extends AbstraticController {
 		try {
 			Stage mainStage = new Stage(StageStyle.DECORATED);
 			
-			PrincipalController.getInstance().start(mainStage);
+			ControllerFactory.getPrincipalControllerInstance().start(mainStage);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

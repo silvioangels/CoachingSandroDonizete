@@ -18,17 +18,6 @@ public class ConteudoInicioController extends AbstraticController {
 	
 	private static Stage stage;
 	
-	private static ConteudoInicioController instance;
-	
-	public static ConteudoInicioController getInstance(){
-		
-		if(instance == null){
-			instance = new ConteudoInicioController();
-		}
-		
-		return instance;
-	}
-
 	@Override
 	public void start(Stage initStage) throws Exception {
 		try {
