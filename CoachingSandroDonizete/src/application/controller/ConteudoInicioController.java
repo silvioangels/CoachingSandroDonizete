@@ -3,20 +3,38 @@ package application.controller;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import application.bo.FactoryBO;
 import application.enumeration.ResoursesEnum;
 import application.enumeration.TelaEnum;
+import application.model.ConsultaCoachee;
 import application.navigation.ConteudoNavigator;
 
-public class ConteudoInicioController extends AbstraticController {
+public class ConteudoInicioController extends AbstraticController implements Initializable{
 	
 	private static Stage stage;
+	
+	@FXML
+	private TableView<ConsultaCoachee> tabelaCoacheesAtivos;
+	
+	@Override
+	public void initialize(URL url, ResourceBundle resorses) {
+		
+		tabelaCoacheesAtivos.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+		tabelaCoacheesAtivos.getItems().setAll(FactoryBO.getInicioBOInstance().recuperarTodasConsultasCoachee());
+		
+	}
 	
 	@Override
 	public void start(Stage initStage) throws Exception {

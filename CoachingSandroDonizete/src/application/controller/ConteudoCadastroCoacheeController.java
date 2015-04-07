@@ -1,7 +1,6 @@
 package application.controller;
 
 import java.net.URL;
-import java.sql.Date;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -105,7 +104,7 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	
 	private void preencherInformacoesTelaConsultaCoacche(){
 		
-		consultaCoacheeApplication.getCoachee().setNomeCoachee(nomeCoachee.getText());
+		/*consultaCoacheeApplication.getCoachee().setNomeCoachee(nomeCoachee.getText());
 		consultaCoacheeApplication.getCoachee().setDtNascimento(Date.valueOf(dtNascimento.getValue()));
 		consultaCoacheeApplication.getCoachee().setDddResidencial(dddResidencial.getText());
 		consultaCoacheeApplication.getCoachee().setFoneResidencial(foneResidencial.getText());
@@ -123,7 +122,7 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 		consultaCoacheeApplication.getCoachee().setSkype(skype.getText());
 		consultaCoacheeApplication.getCoachee().setTwitter(twitter.getText());
 		consultaCoacheeApplication.getCoachee().setComoConheceu(comoConheceu.getText());
-		consultaCoacheeApplication.setCoacheeAtivo(true);
+		consultaCoacheeApplication.setCoacheeAtivo(true);*/
 	}
 	
 	private boolean validarPreenchimentoCamposObrigatorios(){

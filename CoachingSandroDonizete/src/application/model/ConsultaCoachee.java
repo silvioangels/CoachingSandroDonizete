@@ -1,8 +1,10 @@
 package application.model;
 
+import javafx.beans.property.BooleanProperty;
+
 public class ConsultaCoachee {
 	
-	private boolean coacheeAtivo;
+	private BooleanProperty coacheeAtivo;
 	
 	private CoacheePerson coachee;
 	
@@ -20,12 +22,12 @@ public class ConsultaCoachee {
 		this.coachee = coachee;
 	}
 
-	public boolean isCoacheeAtivo() {
+	public BooleanProperty getCoacheeAtivo() {
 		return coacheeAtivo;
 	}
 
-	public void setCoacheeAtivo(boolean coacheeAtivo) {
+	public void setCoacheeAtivo(BooleanProperty coacheeAtivo) {
 		this.coacheeAtivo = coacheeAtivo;
 	}
-	
+
 }

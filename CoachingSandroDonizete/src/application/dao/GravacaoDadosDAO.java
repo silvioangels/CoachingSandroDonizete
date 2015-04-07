@@ -111,7 +111,7 @@ public class GravacaoDadosDAO extends AbstractDadosDAO{
 	                  String str = name.substring(lastIndex);
 	                  
 	                  SimpleDateFormat formatadorDMY = new SimpleDateFormat("dd_MM_yyyy");
-	                  CharSequence nomeDoArquivo = 	consultaCoachee.getCoachee().getNomeCoachee().substring(0,10).replace(" ", "_").toLowerCase() +"_"+
+	                  CharSequence nomeDoArquivo = 	consultaCoachee.getCoachee().getNomeCoachee().toString().substring(0,10).replace(" ", "_").toLowerCase() +"_"+
 													formatadorDMY.format(consultaCoachee.getCoachee().getDtNascimento());
 	                  
 	                  CharSequence nomeAtivo = "true";
@@ -139,10 +139,10 @@ public class GravacaoDadosDAO extends AbstractDadosDAO{
 				SimpleDateFormat formatadorDMYMS = new SimpleDateFormat("dd_MM_yyyy_mm_ss");
 				GregorianCalendar gregCalendar = new GregorianCalendar();
 				
-				nomeDoArquivo = 	consultaCoachee.getCoachee().getNomeCoachee().substring(0,10).replace(" ", "_").toLowerCase() 	+"_"+
-									formatadorDMY.format(consultaCoachee.getCoachee().getDtNascimento())							+"_"+
-									formatadorDMYMS.format(gregCalendar.getTime())													+"_"+
-									consultaCoachee.isCoacheeAtivo()																+".txt";
+				nomeDoArquivo = 	consultaCoachee.getCoachee().getNomeCoachee().toString().substring(0,10).replace(" ", "_").toLowerCase() 	+"_"+
+									formatadorDMY.format(consultaCoachee.getCoachee().getDtNascimento())										+"_"+
+									formatadorDMYMS.format(gregCalendar.getTime())																+"_"+
+									consultaCoachee.getCoacheeAtivo().toString()																+".txt";
 				
 			}
 			
