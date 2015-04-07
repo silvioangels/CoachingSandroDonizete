@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.net.URL;
+import java.sql.Date;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -10,6 +11,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import javax.swing.JOptionPane;
+
+import application.bo.FactoryBO;
 import application.list.ListasEstaticas;
 
 
@@ -87,12 +92,38 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 			
 			if(validarPreenchimentoCamposObrigatorios()){
 				
+				this.preencherInformacoesTelaConsultaCoacche();
+				FactoryBO.getCadastroCoacheeBOInstance().salvar(consultaCoacheeApplication);
+				JOptionPane.showMessageDialog(null, "Dados Gravados com sucesso","Confirmação", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	private void preencherInformacoesTelaConsultaCoacche(){
+		
+		consultaCoacheeApplication.getCoachee().setNomeCoachee(nomeCoachee.getText());
+		consultaCoacheeApplication.getCoachee().setDtNascimento(Date.valueOf(dtNascimento.getValue()));
+		consultaCoacheeApplication.getCoachee().setDddResidencial(dddResidencial.getText());
+		consultaCoacheeApplication.getCoachee().setFoneResidencial(foneResidencial.getText());
+		consultaCoacheeApplication.getCoachee().setDddCelular(dddCelular.getText());
+		consultaCoacheeApplication.getCoachee().setFoneCelular(foneCelular.getText());
+		consultaCoacheeApplication.getCoachee().setEscolaridade(escolaridade.getValue());
+		consultaCoacheeApplication.getCoachee().setProfissao(profissao.getText());
+		consultaCoacheeApplication.getCoachee().setCep(cep.getText());
+		consultaCoacheeApplication.getCoachee().setEndereco(endereco.getText());
+		consultaCoacheeApplication.getCoachee().setBairro(bairro.getText());
+		consultaCoacheeApplication.getCoachee().setCidade(cidade.getText());
+		consultaCoacheeApplication.getCoachee().setEstado(estado.getValue());
+		consultaCoacheeApplication.getCoachee().setEmail(email.getText());
+		consultaCoacheeApplication.getCoachee().setSite(site.getText());
+		consultaCoacheeApplication.getCoachee().setSkype(skype.getText());
+		consultaCoacheeApplication.getCoachee().setTwitter(twitter.getText());
+		consultaCoacheeApplication.getCoachee().setComoConheceu(comoConheceu.getText());
+		consultaCoacheeApplication.setCoacheeAtivo(true);
 	}
 	
 	private boolean validarPreenchimentoCamposObrigatorios(){

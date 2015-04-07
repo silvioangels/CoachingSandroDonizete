@@ -20,6 +20,16 @@ import application.model.ConsultaCoacheeWrapper;
 
 public class GravacaoDadosDAO extends AbstractDadosDAO{
 	
+	private static GravacaoDadosDAO instance;
+	
+	public static GravacaoDadosDAO getInstance() {
+		
+		if(instance == null){
+			instance = new GravacaoDadosDAO();
+		}
+		return instance;
+	}
+
 	public ObservableList<ConsultaCoachee> recuperarTodasConsultasCoachee(){
 		
 		ObservableList<ConsultaCoachee> listaConsultaCoachee = FXCollections.observableArrayList();
