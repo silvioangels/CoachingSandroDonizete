@@ -90,7 +90,9 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	private void cadastroNovoCoachee() {
 
 		try {
-			consultaCoacheeApplication = new ConsultaCoachee();
+			
+			consultaCoacheeApplication = null;
+			
 			ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
 			
 		} catch (Exception e) {

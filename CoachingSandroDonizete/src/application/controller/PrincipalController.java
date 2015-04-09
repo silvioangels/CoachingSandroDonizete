@@ -12,6 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import javax.swing.JOptionPane;
+
 import application.enumeration.TelaEnum;
 import application.navigation.ConteudoNavigator;
 
@@ -70,18 +73,22 @@ public class PrincipalController extends AbstraticController {
     }
 	
 	@FXML
+    void abrirTelaInicio(ActionEvent event) {
+        ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_INICIO.getCaminhoFxml());
+    }
+	
+	@FXML
     void abrirTelaCadastroNovoCoachee(ActionEvent event) {
         ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
     }
 	
 	@FXML
     void abrirTelaDadosPrograma(ActionEvent event) {
-        ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_DADOS_PROGRAMA.getCaminhoFxml());
-    }
-	
-	@FXML
-    void abrirTelaInicio(ActionEvent event) {
-        ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_INICIO.getCaminhoFxml());
+		if( consultaCoacheeApplication == null){
+			JOptionPane.showMessageDialog(null, "Somente é possivel entrar nessa opção com um coachee já cadastrado.","Alerta", JOptionPane.INFORMATION_MESSAGE);
+		}else{
+			ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_DADOS_PROGRAMA.getCaminhoFxml());
+		}
     }
 	
 	

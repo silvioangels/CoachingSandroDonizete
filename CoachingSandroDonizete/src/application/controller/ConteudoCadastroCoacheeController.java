@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 
 import application.bo.FactoryBO;
 import application.list.ListasEstaticas;
+import application.model.ConsultaCoachee;
 
 
 
@@ -107,7 +108,7 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	}
 	
 	private void preencherInformacoesTelaConsultaCoacche(){
-		
+		consultaCoacheeApplication = new ConsultaCoachee();
 		consultaCoacheeApplication.getCoachee().setNomeCoachee(nomeCoachee.getText());
 		consultaCoacheeApplication.getCoachee().setDtNascimento(Date.valueOf(dtNascimento.getValue()));
 		consultaCoacheeApplication.getCoachee().setDddResidencial(dddResidencial.getText());
@@ -147,7 +148,7 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	
 	private void carregarDadosCoachee(){
 		
-		if(consultaCoacheeApplication.getCoachee() != null){
+		if(consultaCoacheeApplication != null){
 			nomeCoachee.setText(consultaCoacheeApplication.getCoachee().getNomeCoachee());
 			dtNascimento.setValue(Instant.ofEpochMilli(consultaCoacheeApplication.getCoachee().getDtNascimento().getTime()).atZone(ZoneId.systemDefault()).toLocalDate());
 			dddResidencial.setText(consultaCoacheeApplication.getCoachee().getDddResidencial());
