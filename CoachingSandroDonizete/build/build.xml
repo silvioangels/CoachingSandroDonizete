@@ -112,7 +112,7 @@
 		</fx:resources>
 	
 		<fx:application id="fxApplication"
-			name="Delphos Coaching 2015  por Sandro Donizete"
+			name="Delphos Coaching 2015"
 			mainClass="application.controller.PreLoaderController"
 		/>
 	
@@ -127,8 +127,8 @@
 			<fx:resources refid="appRes"/>
 	
 			<manifest>
-				<attribute name="Implementation-Vendor" value="DelphosCoaching"/>
-				<attribute name="Implementation-Title" value="Delphos Coaching 2015  por Sandro Donizete"/>
+				<attribute name="Implementation-Vendor" value="Delphos Coaching"/>
+				<attribute name="Implementation-Title" value="Delphos Coaching 2015"/>
 				<attribute name="Implementation-Version" value="1"/>
 				<attribute name="JavaFX-Feature-Proxy" value="None"/>
 			</manifest>
@@ -147,7 +147,7 @@
 			updatemode="background" >
 	
 			<fx:platform basedir="${java.home}"/>
-			<fx:info title="CoachingSandroDonizete" vendor="DelphosCoaching"/>
+			<fx:info title="CoachingSandroDonizete" vendor="Delphos Coaching"/>
 	
 			<fx:application refId="fxApplication"/>
 			<fx:resources refid="appRes"/>

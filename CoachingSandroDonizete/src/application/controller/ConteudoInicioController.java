@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -30,6 +31,9 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	private static Stage stage;
 	
 	private ObservableList<ConsultaCoachee> listaCoacheesAtivos;
+	
+	@FXML
+	private Hyperlink quantidadeCoacheeAtivos;
 	
 	@FXML
 	private TableView<TableViewCoacheesAtivos> tabelaCoacheesAtivos;
@@ -52,6 +56,8 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 		
 		tabelaCoacheesAtivos.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         tabelaCoacheesAtivos.setItems(recuperarTodasConsultasCoacheeAtivos());
+        
+        quantidadeCoacheeAtivos.setText(String.valueOf(listaCoacheesAtivos.size()));
 		
 	}
 	

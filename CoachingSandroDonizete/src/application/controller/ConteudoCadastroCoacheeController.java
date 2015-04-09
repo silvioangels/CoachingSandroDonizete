@@ -243,7 +243,7 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 		MaskFieldUtil.maxField(cidade, 30);
 		
 		//Dados Digitais
-		MaskFieldUtil.maxField(email, 20);
+		MaskFieldUtil.maxField(email, 40);
 		MaskFieldUtil.maxField(site, 40);
 		MaskFieldUtil.maxField(skype, 40);
 		MaskFieldUtil.maxField(twitter, 40);

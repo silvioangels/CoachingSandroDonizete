@@ -76,6 +76,6 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="842.0" layoutY="182.0" text="0" />
+      <Hyperlink fx:id="quantidadeCoacheeAtivos" layoutX="842.0" layoutY="182.0" text="0" />
 	</children>
 </AnchorPane>
