@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "root")
 public class ConsultaCoacheeWrapper {
 
-	private ConsultaCoachee consultaCoachee;
+	private ConsultaCoachee consultaCoachee = new ConsultaCoachee();
 
 	@XmlElement(name = "consultacoachee")
 	public ConsultaCoachee getConsultaCoachee() {

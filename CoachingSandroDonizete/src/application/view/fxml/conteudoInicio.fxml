@@ -14,9 +14,9 @@
 		<Button layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" styleClass="btnRed" text="Cadastro de novo Coachee" />
       <TableView fx:id="tabelaCoacheesAtivos" layoutX="82.0" layoutY="139.0" prefHeight="198.0" prefWidth="622.0">
         <columns>
-          <TableColumn editable="false" prefWidth="411.0" resizable="false" text="Nome" />
-            <TableColumn prefWidth="114.0" text="Dt. Ultima Sessão" />
-            <TableColumn prefWidth="96.0" text="Numero Sessão" />
+          <TableColumn fx:id="nomeCoacheeColuna" editable="false" prefWidth="411.0" resizable="false" text="Nome" />
+            <TableColumn fx:id="ultimaSessaoColuna" prefWidth="114.0" text="Dt. Ultima Sessão" />
+            <TableColumn fx:id="numeroSessaoColuna" prefWidth="96.0" text="Numero Sessão" />
         </columns>
       </TableView>
       <Label layoutX="14.0" layoutY="659.0" text="© 2015  por Sandro Donizete" />

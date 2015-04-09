@@ -1,190 +1,187 @@
 package application.model;
 
-import java.time.LocalDate;
-
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.StringProperty;
+import java.util.Date;
 
 public class CoacheePerson {
 	
-	private StringProperty nomeCoachee;
+	private String nomeCoachee;
 	
-	private ObjectProperty<LocalDate> dtNascimento;
+	private Date dtNascimento;
 	
-	private StringProperty dddResidencial;
+	private String dddResidencial;
 	
-	private StringProperty foneResidencial;
+	private String foneResidencial;
 	
-	private StringProperty dddCelular;
+	private String dddCelular;
 	
-	private StringProperty foneCelular;
+	private String foneCelular;
 	
-	private StringProperty escolaridade;
+	private String escolaridade;
 	
-	private StringProperty profissao;
+	private String profissao;
 	
-	private StringProperty cep;
+	private String cep;
 	
-	private StringProperty endereco;
+	private String endereco;
 	
-	private StringProperty bairro;
+	private String bairro;
 	
-	private StringProperty cidade;
+	private String cidade;
 	
-	private StringProperty estado;
+	private String estado;
 	
-	private StringProperty email;
+	private String email;
 	
-	private StringProperty site;
+	private String site;
 	
-	private StringProperty skype;
+	private String skype;
 	
-	private StringProperty twitter;
+	private String twitter;
 	
-	private StringProperty comoConheceu;
+	private String comoConheceu;
 
-	public StringProperty getNomeCoachee() {
+	public String getNomeCoachee() {
 		return nomeCoachee;
 	}
 
-	public void setNomeCoachee(StringProperty nomeCoachee) {
+	public void setNomeCoachee(String nomeCoachee) {
 		this.nomeCoachee = nomeCoachee;
 	}
 
-	public ObjectProperty<LocalDate> getDtNascimento() {
+	public Date getDtNascimento() {
 		return dtNascimento;
 	}
 
-	public void setDtNascimento(ObjectProperty<LocalDate> dtNascimento) {
+	public void setDtNascimento(Date dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
 
-	public StringProperty getDddResidencial() {
+	public String getDddResidencial() {
 		return dddResidencial;
 	}
 
-	public void setDddResidencial(StringProperty dddResidencial) {
+	public void setDddResidencial(String dddResidencial) {
 		this.dddResidencial = dddResidencial;
 	}
 
-	public StringProperty getFoneResidencial() {
+	public String getFoneResidencial() {
 		return foneResidencial;
 	}
 
-	public void setFoneResidencial(StringProperty foneResidencial) {
+	public void setFoneResidencial(String foneResidencial) {
 		this.foneResidencial = foneResidencial;
 	}
 
-	public StringProperty getDddCelular() {
+	public String getDddCelular() {
 		return dddCelular;
 	}
 
-	public void setDddCelular(StringProperty dddCelular) {
+	public void setDddCelular(String dddCelular) {
 		this.dddCelular = dddCelular;
 	}
 
-	public StringProperty getFoneCelular() {
+	public String getFoneCelular() {
 		return foneCelular;
 	}
 
-	public void setFoneCelular(StringProperty foneCelular) {
+	public void setFoneCelular(String foneCelular) {
 		this.foneCelular = foneCelular;
 	}
 
-	public StringProperty getEscolaridade() {
+	public String getEscolaridade() {
 		return escolaridade;
 	}
 
-	public void setEscolaridade(StringProperty escolaridade) {
+	public void setEscolaridade(String escolaridade) {
 		this.escolaridade = escolaridade;
 	}
 
-	public StringProperty getProfissao() {
+	public String getProfissao() {
 		return profissao;
 	}
 
-	public void setProfissao(StringProperty profissao) {
+	public void setProfissao(String profissao) {
 		this.profissao = profissao;
 	}
 
-	public StringProperty getCep() {
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(StringProperty cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 
-	public StringProperty getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(StringProperty endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 
-	public StringProperty getBairro() {
+	public String getBairro() {
 		return bairro;
 	}
 
-	public void setBairro(StringProperty bairro) {
+	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
 
-	public StringProperty getCidade() {
+	public String getCidade() {
 		return cidade;
 	}
 
-	public void setCidade(StringProperty cidade) {
+	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
 
-	public StringProperty getEstado() {
+	public String getEstado() {
 		return estado;
 	}
 
-	public void setEstado(StringProperty estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-	public StringProperty getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(StringProperty email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public StringProperty getSite() {
+	public String getSite() {
 		return site;
 	}
 
-	public void setSite(StringProperty site) {
+	public void setSite(String site) {
 		this.site = site;
 	}
 
-	public StringProperty getSkype() {
+	public String getSkype() {
 		return skype;
 	}
 
-	public void setSkype(StringProperty skype) {
+	public void setSkype(String skype) {
 		this.skype = skype;
 	}
 
-	public StringProperty getTwitter() {
+	public String getTwitter() {
 		return twitter;
 	}
 
-	public void setTwitter(StringProperty twitter) {
+	public void setTwitter(String twitter) {
 		this.twitter = twitter;
 	}
 
-	public StringProperty getComoConheceu() {
+	public String getComoConheceu() {
 		return comoConheceu;
 	}
 
-	public void setComoConheceu(StringProperty comoConheceu) {
+	public void setComoConheceu(String comoConheceu) {
 		this.comoConheceu = comoConheceu;
 	}
-
+	
 }

@@ -1,12 +1,9 @@
 package application.controller;
 
 import java.net.URL;
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.ResourceBundle;
 
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -108,25 +105,25 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	
 	private void preencherInformacoesTelaConsultaCoacche(){
 		
-		consultaCoacheeApplication.getCoachee().setNomeCoachee(new SimpleStringProperty(nomeCoachee.getText()));
-		consultaCoacheeApplication.getCoachee().setDtNascimento(new SimpleObjectProperty<LocalDate>(dtNascimento.getValue()));
-		consultaCoacheeApplication.getCoachee().setDddResidencial(new SimpleStringProperty(dddResidencial.getText()));
-		consultaCoacheeApplication.getCoachee().setFoneResidencial(new SimpleStringProperty(foneResidencial.getText()));
-		consultaCoacheeApplication.getCoachee().setDddCelular(new SimpleStringProperty(dddCelular.getText()));
-		consultaCoacheeApplication.getCoachee().setFoneCelular(new SimpleStringProperty(foneCelular.getText()));
-		consultaCoacheeApplication.getCoachee().setEscolaridade(new SimpleStringProperty(escolaridade.getValue()));
-		consultaCoacheeApplication.getCoachee().setProfissao(new SimpleStringProperty(profissao.getText()));
-		consultaCoacheeApplication.getCoachee().setCep(new SimpleStringProperty(cep.getText()));
-		consultaCoacheeApplication.getCoachee().setEndereco(new SimpleStringProperty(endereco.getText()));
-		consultaCoacheeApplication.getCoachee().setBairro(new SimpleStringProperty(bairro.getText()));
-		consultaCoacheeApplication.getCoachee().setCidade(new SimpleStringProperty(cidade.getText()));
-		consultaCoacheeApplication.getCoachee().setEstado(new SimpleStringProperty(estado.getValue()));
-		consultaCoacheeApplication.getCoachee().setEmail(new SimpleStringProperty(email.getText()));
-		consultaCoacheeApplication.getCoachee().setSite(new SimpleStringProperty(site.getText()));
-		consultaCoacheeApplication.getCoachee().setSkype(new SimpleStringProperty(skype.getText()));
-		consultaCoacheeApplication.getCoachee().setTwitter(new SimpleStringProperty(twitter.getText()));
-		consultaCoacheeApplication.getCoachee().setComoConheceu(new SimpleStringProperty(comoConheceu.getText()));
-		consultaCoacheeApplication.setCoacheeAtivo(new SimpleBooleanProperty(true));
+		consultaCoacheeApplication.getCoachee().setNomeCoachee(nomeCoachee.getText());
+		consultaCoacheeApplication.getCoachee().setDtNascimento(Date.valueOf(dtNascimento.getValue()));
+		consultaCoacheeApplication.getCoachee().setDddResidencial(dddResidencial.getText());
+		consultaCoacheeApplication.getCoachee().setFoneResidencial(foneResidencial.getText());
+		consultaCoacheeApplication.getCoachee().setDddCelular(dddCelular.getText());
+		consultaCoacheeApplication.getCoachee().setFoneCelular(foneCelular.getText());
+		consultaCoacheeApplication.getCoachee().setEscolaridade(escolaridade.getValue());
+		consultaCoacheeApplication.getCoachee().setProfissao(profissao.getText());
+		consultaCoacheeApplication.getCoachee().setCep(cep.getText());
+		consultaCoacheeApplication.getCoachee().setEndereco(endereco.getText());
+		consultaCoacheeApplication.getCoachee().setBairro(bairro.getText());
+		consultaCoacheeApplication.getCoachee().setCidade(cidade.getText());
+		consultaCoacheeApplication.getCoachee().setEstado(estado.getValue());
+		consultaCoacheeApplication.getCoachee().setEmail(email.getText());
+		consultaCoacheeApplication.getCoachee().setSite(site.getText());
+		consultaCoacheeApplication.getCoachee().setSkype(skype.getText());
+		consultaCoacheeApplication.getCoachee().setTwitter(twitter.getText());
+		consultaCoacheeApplication.getCoachee().setComoConheceu(comoConheceu.getText());
+		consultaCoacheeApplication.setCoacheeAtivo(true);
 	}
 	
 	private boolean validarPreenchimentoCamposObrigatorios(){

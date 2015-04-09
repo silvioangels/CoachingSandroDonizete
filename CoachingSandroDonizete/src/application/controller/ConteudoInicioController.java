@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -27,6 +28,15 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	
 	@FXML
 	private TableView<ConsultaCoachee> tabelaCoacheesAtivos;
+	
+	@FXML
+    private TableColumn<ConsultaCoachee, String> nomeCoacheeColuna;
+	
+	@FXML
+    private TableColumn<ConsultaCoachee, String> ultimaSessaoColuna;
+	
+	@FXML
+    private TableColumn<ConsultaCoachee, String> numeroSessaoColuna;
 	
 	@Override
 	public void initialize(URL url, ResourceBundle resorses) {

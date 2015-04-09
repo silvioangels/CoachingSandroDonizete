@@ -139,10 +139,10 @@ public class GravacaoDadosDAO extends AbstractDadosDAO{
 				SimpleDateFormat formatadorDMYMS = new SimpleDateFormat("dd_MM_yyyy_mm_ss");
 				GregorianCalendar gregCalendar = new GregorianCalendar();
 				
-				nomeDoArquivo = 	consultaCoachee.getCoachee().getNomeCoachee().toString().substring(0,10).replace(" ", "_").toLowerCase() 	+"_"+
+				nomeDoArquivo = 	consultaCoachee.getCoachee().getNomeCoachee().substring(0,10).replace(" ", "_").toLowerCase() 	+"_"+
 									formatadorDMY.format(consultaCoachee.getCoachee().getDtNascimento())										+"_"+
 									formatadorDMYMS.format(gregCalendar.getTime())																+"_"+
-									consultaCoachee.getCoacheeAtivo().toString()																+".txt";
+									consultaCoachee.isCoacheeAtivo()																			+".txt";
 				
 			}
 			
