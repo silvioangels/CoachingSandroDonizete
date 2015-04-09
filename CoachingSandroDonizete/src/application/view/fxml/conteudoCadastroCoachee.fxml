@@ -37,15 +37,15 @@
             <TextField fx:id="nomeCoachee" layoutX="83.0" layoutY="56.0" prefHeight="25.0" prefWidth="548.0" promptText="Nome Completo do Coachee" />
             
             <Label layoutX="28.0" layoutY="99.0" text="Dt.Nasc." />
-            <DatePicker fx:id="dtNascimento" layoutX="85.0" layoutY="94.0" prefHeight="25.0" prefWidth="201.0" promptText="dd/mm/aaaa" />
+            <DatePicker fx:id="dtNascimento"  layoutX="85.0" layoutY="94.0" prefHeight="25.0" prefWidth="201.0" promptText="dd/mm/aaaa" />
             
             <Label layoutX="296.0" layoutY="98.0" text="Tel" />
-            <TextField fx:id="dddResidencial" layoutX="319.0" layoutY="94.0" prefHeight="25.0" prefWidth="30.0" promptText="xx" />
-            <TextField fx:id="foneResidencial" layoutX="361.0" layoutY="94.0" prefHeight="25.0" prefWidth="95.0" promptText="xxxx-xxxx" />
+            <TextField fx:id="dddResidencial" layoutX="319.0" layoutY="94.0" prefHeight="25.0" prefWidth="37.0" promptText="xx" />
+            <TextField fx:id="foneResidencial" layoutX="359.0" layoutY="94.0" prefHeight="25.0" prefWidth="95.0" promptText="xxxx-xxxx" />
             
-            <Label layoutX="473.0" layoutY="98.0" text="Cel" />
-            <TextField fx:id="dddCelular" layoutX="499.0" layoutY="94.0" prefHeight="25.0" prefWidth="30.0" promptText="xx" />
-            <TextField fx:id="foneCelular" layoutX="537.0" layoutY="94.0" prefHeight="25.0" prefWidth="95.0" promptText="xxxx-xxxx" />
+            <Label layoutX="462.0" layoutY="98.0" text="Cel" />
+            <TextField fx:id="dddCelular" layoutX="492.0" layoutY="94.0" prefHeight="25.0" prefWidth="37.0" promptText="xx" />
+            <TextField fx:id="foneCelular" layoutX="537.0" layoutY="94.0" prefHeight="25.0" prefWidth="95.0" promptText="xxxx-xxxxx" />
             
             <Label layoutX="28.0" layoutY="139.0" text="Escolaridade" />
             <ComboBox fx:id="escolaridade" layoutX="107.0" layoutY="135.0" prefHeight="25.0" prefWidth="179.0" promptText="Selecione" />

@@ -20,6 +20,7 @@ import application.bo.FactoryBO;
 import application.list.ListasEstaticas;
 import application.model.CoacheePerson;
 import application.model.ConsultaCoachee;
+import application.util.MaskFieldUtil;
 
 
 
@@ -84,10 +85,15 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-
-		carregarDadosCoachee();
-		carregarListas();
-		
+		try {
+			
+			carregarListas();
+			carregarDadosCoachee();
+			carregarMascarasCamposEntrada();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
 	}
 	
 	@FXML
@@ -136,10 +142,54 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	
 	private boolean validarPreenchimentoCamposObrigatorios(){
 		
+		String msgValidacao = null;
+		
 		boolean resultado = true;
 		
+			
 		if(nomeCoachee.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Nome";
 			resultado = false;
+		}else if(dtNascimento.getValue() == null){
+			msgValidacao = "Favor inserir corretamente a data de nascimento no formato dd/mm/aaaa";
+			resultado = false;
+		}else if(dddResidencial.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de DDD do Telefone";
+			resultado = false;
+		}else if(foneResidencial.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Telefone";
+			resultado = false;
+		}else if(dddCelular.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de DDD do Celular";
+			resultado = false;
+		}else if(foneCelular.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Celular";
+			resultado = false;
+		}else if(escolaridade.getValue() == null){
+			msgValidacao = "Favor selecionar alguma opção do campo de Escolaridade";
+			resultado = false;
+		}else if(profissao.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Profissão";
+			resultado = false;
+		}else if(cep.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Cep";
+			resultado = false;
+		}else if(endereco.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Endereço";
+			resultado = false;
+		}else if(bairro.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Bairro";
+			resultado = false;
+		}else if(cidade.getText().isEmpty()){
+			msgValidacao = "Favor preencher o campo de Cidade";
+			resultado = false;
+		}else if(estado.getValue() == null){
+			msgValidacao = "Favor selecionar alguma opção do campo de Estado";
+			resultado = false;
+		}			
+			
+		if(!resultado){
+			JOptionPane.showMessageDialog(null, msgValidacao,"Validação", JOptionPane.WARNING_MESSAGE);
 		}
 		
 		return resultado;
@@ -161,7 +211,7 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 			dddCelular.setText(consultaCoacheeApplication.getCoachee().getDddCelular());
 			foneCelular.setText(consultaCoacheeApplication.getCoachee().getFoneCelular());
 			escolaridade.setValue(consultaCoacheeApplication.getCoachee().getEscolaridade());
-			profissao.setText(consultaCoacheeApplication.getCoachee().getEscolaridade());
+			profissao.setText(consultaCoacheeApplication.getCoachee().getProfissao());
 			cep.setText(consultaCoacheeApplication.getCoachee().getCep());
 			endereco.setText(consultaCoacheeApplication.getCoachee().getEndereco());
 			bairro.setText(consultaCoacheeApplication.getCoachee().getBairro());
@@ -173,6 +223,32 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 			skype.setText(consultaCoacheeApplication.getCoachee().getSkype());
 			comoConheceu.setText(consultaCoacheeApplication.getCoachee().getComoConheceu());
 		}
+		
+	}
+	
+	private void carregarMascarasCamposEntrada(){
+		
+		//Dados Coachee
+		MaskFieldUtil.maxField(nomeCoachee, 70);
+		MaskFieldUtil.dddField(dddResidencial);
+		MaskFieldUtil.foneField(foneResidencial);
+		MaskFieldUtil.dddField(dddCelular);
+		MaskFieldUtil.celularField(foneCelular);
+		MaskFieldUtil.maxField(profissao, 50);
+		
+		//Dados Endereço
+		MaskFieldUtil.cepField(cep);
+		MaskFieldUtil.maxField(endereco, 30);
+		MaskFieldUtil.maxField(bairro, 30);
+		MaskFieldUtil.maxField(cidade, 30);
+		
+		//Dados Digitais
+		MaskFieldUtil.maxField(email, 20);
+		MaskFieldUtil.maxField(site, 40);
+		MaskFieldUtil.maxField(skype, 40);
+		MaskFieldUtil.maxField(twitter, 40);
+		MaskFieldUtil.maxField(comoConheceu, 200);
+		
 		
 	}
 	
