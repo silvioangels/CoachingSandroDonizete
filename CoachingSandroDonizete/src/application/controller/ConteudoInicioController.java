@@ -6,6 +6,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +22,7 @@ import application.bo.FactoryBO;
 import application.enumeration.ResoursesEnum;
 import application.enumeration.TelaEnum;
 import application.model.ConsultaCoachee;
+import application.model.TableViewCoacheesAtivos;
 import application.navigation.ConteudoNavigator;
 
 public class ConteudoInicioController extends AbstraticController implements Initializable{
@@ -27,23 +30,40 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	private static Stage stage;
 	
 	@FXML
-	private TableView<ConsultaCoachee> tabelaCoacheesAtivos;
+	private TableView<TableViewCoacheesAtivos> tabelaCoacheesAtivos;
 	
 	@FXML
-    private TableColumn<ConsultaCoachee, String> nomeCoacheeColuna;
+    private TableColumn<TableViewCoacheesAtivos, String> nomeCoacheeColuna;
 	
 	@FXML
-    private TableColumn<ConsultaCoachee, String> ultimaSessaoColuna;
+    private TableColumn<TableViewCoacheesAtivos, String> ultimaSessaoColuna;
 	
 	@FXML
-    private TableColumn<ConsultaCoachee, String> numeroSessaoColuna;
+    private TableColumn<TableViewCoacheesAtivos, String> numeroSessaoColuna;
 	
 	@Override
 	public void initialize(URL url, ResourceBundle resorses) {
 		
 		tabelaCoacheesAtivos.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-		tabelaCoacheesAtivos.getItems().setAll(FactoryBO.getInicioBOInstance().recuperarTodasConsultasCoachee());
+        tabelaCoacheesAtivos.setItems(recuperarTodasConsultasCoacheeAtivos());
+        
+        nomeCoacheeColuna.setCellValueFactory(cellData  -> cellData.getValue().getNomeCoachee());
+        ultimaSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getUltimaSessao());
+        numeroSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getNumeroSessao());
 		
+	}
+	
+	private ObservableList<TableViewCoacheesAtivos> recuperarTodasConsultasCoacheeAtivos(){
+		
+		ObservableList<TableViewCoacheesAtivos> listaTabelaConsultaCoacheesAtivos = FXCollections.observableArrayList();
+		
+		for (ConsultaCoachee consultaCoachee : FactoryBO.getInicioBOInstance().recuperarTodasConsultasCoachee()) {
+			
+			listaTabelaConsultaCoacheesAtivos.add(new TableViewCoacheesAtivos(consultaCoachee.getCoachee().getNomeCoachee(),consultaCoachee.getDataUltimaSessao(),consultaCoachee.getNumeroUltimaSessao()));
+			
+		}
+		
+		return listaTabelaConsultaCoacheesAtivos;
 	}
 	
 	@Override

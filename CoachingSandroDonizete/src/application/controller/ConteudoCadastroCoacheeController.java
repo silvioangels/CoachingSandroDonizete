@@ -123,7 +123,6 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 		consultaCoacheeApplication.getCoachee().setSkype(skype.getText());
 		consultaCoacheeApplication.getCoachee().setTwitter(twitter.getText());
 		consultaCoacheeApplication.getCoachee().setComoConheceu(comoConheceu.getText());
-		consultaCoacheeApplication.setCoacheeAtivo(true);
 	}
 	
 	private boolean validarPreenchimentoCamposObrigatorios(){
