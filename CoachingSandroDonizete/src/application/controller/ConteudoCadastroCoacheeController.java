@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 
 import application.bo.FactoryBO;
 import application.list.ListasEstaticas;
+import application.model.CoacheePerson;
 import application.model.ConsultaCoachee;
 
 
@@ -108,25 +109,29 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	}
 	
 	private void preencherInformacoesTelaConsultaCoacche(){
+		
+		CoacheePerson coacheePersonCadastrado = new CoacheePerson();
+		coacheePersonCadastrado.setNomeCoachee(nomeCoachee.getText());
+		coacheePersonCadastrado.setDtNascimento(Date.valueOf(dtNascimento.getValue()));
+		coacheePersonCadastrado.setDddResidencial(dddResidencial.getText());
+		coacheePersonCadastrado.setFoneResidencial(foneResidencial.getText());
+		coacheePersonCadastrado.setDddCelular(dddCelular.getText());
+		coacheePersonCadastrado.setFoneCelular(foneCelular.getText());
+		coacheePersonCadastrado.setEscolaridade(escolaridade.getValue());
+		coacheePersonCadastrado.setProfissao(profissao.getText());
+		coacheePersonCadastrado.setCep(cep.getText());
+		coacheePersonCadastrado.setEndereco(endereco.getText());
+		coacheePersonCadastrado.setBairro(bairro.getText());
+		coacheePersonCadastrado.setCidade(cidade.getText());
+		coacheePersonCadastrado.setEstado(estado.getValue());
+		coacheePersonCadastrado.setEmail(email.getText());
+		coacheePersonCadastrado.setSite(site.getText());
+		coacheePersonCadastrado.setSkype(skype.getText());
+		coacheePersonCadastrado.setTwitter(twitter.getText());
+		coacheePersonCadastrado.setComoConheceu(comoConheceu.getText());
+		
 		consultaCoacheeApplication = new ConsultaCoachee();
-		consultaCoacheeApplication.getCoachee().setNomeCoachee(nomeCoachee.getText());
-		consultaCoacheeApplication.getCoachee().setDtNascimento(Date.valueOf(dtNascimento.getValue()));
-		consultaCoacheeApplication.getCoachee().setDddResidencial(dddResidencial.getText());
-		consultaCoacheeApplication.getCoachee().setFoneResidencial(foneResidencial.getText());
-		consultaCoacheeApplication.getCoachee().setDddCelular(dddCelular.getText());
-		consultaCoacheeApplication.getCoachee().setFoneCelular(foneCelular.getText());
-		consultaCoacheeApplication.getCoachee().setEscolaridade(escolaridade.getValue());
-		consultaCoacheeApplication.getCoachee().setProfissao(profissao.getText());
-		consultaCoacheeApplication.getCoachee().setCep(cep.getText());
-		consultaCoacheeApplication.getCoachee().setEndereco(endereco.getText());
-		consultaCoacheeApplication.getCoachee().setBairro(bairro.getText());
-		consultaCoacheeApplication.getCoachee().setCidade(cidade.getText());
-		consultaCoacheeApplication.getCoachee().setEstado(estado.getValue());
-		consultaCoacheeApplication.getCoachee().setEmail(email.getText());
-		consultaCoacheeApplication.getCoachee().setSite(site.getText());
-		consultaCoacheeApplication.getCoachee().setSkype(skype.getText());
-		consultaCoacheeApplication.getCoachee().setTwitter(twitter.getText());
-		consultaCoacheeApplication.getCoachee().setComoConheceu(comoConheceu.getText());
+		consultaCoacheeApplication.setCoachee(coacheePersonCadastrado);
 	}
 	
 	private boolean validarPreenchimentoCamposObrigatorios(){
