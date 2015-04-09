@@ -2,6 +2,8 @@ package application.controller;
 
 import java.net.URL;
 import java.sql.Date;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -80,7 +82,8 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-		
+
+		carregarDadosCoachee();
 		carregarListas();
 		
 	}
@@ -142,6 +145,29 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 		estado.setItems(ListasEstaticas.getSiglasEstadosBrasileiros());
 	}
 	
+	private void carregarDadosCoachee(){
+		
+		if(consultaCoacheeApplication.getCoachee() != null){
+			nomeCoachee.setText(consultaCoacheeApplication.getCoachee().getNomeCoachee());
+			dtNascimento.setValue(Instant.ofEpochMilli(consultaCoacheeApplication.getCoachee().getDtNascimento().getTime()).atZone(ZoneId.systemDefault()).toLocalDate());
+			dddResidencial.setText(consultaCoacheeApplication.getCoachee().getDddResidencial());
+			foneResidencial.setText(consultaCoacheeApplication.getCoachee().getFoneResidencial());
+			dddCelular.setText(consultaCoacheeApplication.getCoachee().getDddCelular());
+			foneCelular.setText(consultaCoacheeApplication.getCoachee().getFoneCelular());
+			escolaridade.setValue(consultaCoacheeApplication.getCoachee().getEscolaridade());
+			profissao.setText(consultaCoacheeApplication.getCoachee().getEscolaridade());
+			cep.setText(consultaCoacheeApplication.getCoachee().getCep());
+			endereco.setText(consultaCoacheeApplication.getCoachee().getEndereco());
+			bairro.setText(consultaCoacheeApplication.getCoachee().getBairro());
+			cidade.setText(consultaCoacheeApplication.getCoachee().getCidade());
+			estado.setValue(consultaCoacheeApplication.getCoachee().getEstado());
+			email.setText(consultaCoacheeApplication.getCoachee().getEmail());
+			site.setText(consultaCoacheeApplication.getCoachee().getSite());
+			twitter.setText(consultaCoacheeApplication.getCoachee().getTwitter());
+			skype.setText(consultaCoacheeApplication.getCoachee().getSkype());
+			comoConheceu.setText(consultaCoacheeApplication.getCoachee().getComoConheceu());
+		}
+		
+	}
 	
-
 }

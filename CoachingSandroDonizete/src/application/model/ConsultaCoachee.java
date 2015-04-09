@@ -15,11 +15,6 @@ public class ConsultaCoachee {
 	
 
 	public CoacheePerson getCoachee() {
-		
-		if(coachee == null){
-			coachee = new CoacheePerson();
-		}
-		
 		return coachee;
 	}
 

@@ -6,10 +6,6 @@ import application.model.ConsultaCoachee;
 
 public class AbstraticController extends Application{
 	
-	static{
-		consultaCoacheeApplication = new ConsultaCoachee();
-	}
-	
 	protected static ConsultaCoachee consultaCoacheeApplication;
 	
 	@Override

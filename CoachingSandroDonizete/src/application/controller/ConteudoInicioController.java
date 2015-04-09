@@ -29,6 +29,8 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	
 	private static Stage stage;
 	
+	private ObservableList<ConsultaCoachee> listaCoacheesAtivos;
+	
 	@FXML
 	private TableView<TableViewCoacheesAtivos> tabelaCoacheesAtivos;
 	
@@ -44,12 +46,12 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	@Override
 	public void initialize(URL url, ResourceBundle resorses) {
 		
+		nomeCoacheeColuna.setCellValueFactory(cellData  -> cellData.getValue().getNomeCoachee());
+		ultimaSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getUltimaSessao());
+		numeroSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getNumeroSessao());
+		
 		tabelaCoacheesAtivos.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         tabelaCoacheesAtivos.setItems(recuperarTodasConsultasCoacheeAtivos());
-        
-        nomeCoacheeColuna.setCellValueFactory(cellData  -> cellData.getValue().getNomeCoachee());
-        ultimaSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getUltimaSessao());
-        numeroSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getNumeroSessao());
 		
 	}
 	
@@ -57,7 +59,9 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 		
 		ObservableList<TableViewCoacheesAtivos> listaTabelaConsultaCoacheesAtivos = FXCollections.observableArrayList();
 		
-		for (ConsultaCoachee consultaCoachee : FactoryBO.getInicioBOInstance().recuperarTodasConsultasCoachee()) {
+		listaCoacheesAtivos = FactoryBO.getInicioBOInstance().recuperarTodasConsultasCoachee();
+		
+		for (ConsultaCoachee consultaCoachee : listaCoacheesAtivos) {
 			
 			listaTabelaConsultaCoacheesAtivos.add(new TableViewCoacheesAtivos(consultaCoachee.getCoachee().getNomeCoachee(),consultaCoachee.getDataUltimaSessao(),consultaCoachee.getNumeroUltimaSessao()));
 			
@@ -86,6 +90,27 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	private void cadastroNovoCoachee() {
 
 		try {
+			consultaCoacheeApplication = new ConsultaCoachee();
+			ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@FXML
+	private void carregarCoacheeSelecionado() {
+
+		try {
+			
+			for (ConsultaCoachee consultaCoachee : listaCoacheesAtivos) {
+				
+				if(consultaCoachee.getCoachee().getNomeCoachee().equals(tabelaCoacheesAtivos.getSelectionModel().getSelectedItem().getNomeCoachee().getValue())){
+					consultaCoacheeApplication = consultaCoachee;
+					break;
+				}
+			}
 			
 			ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
 			
@@ -130,6 +155,8 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 	public static Stage getStage() {
 		return stage;
