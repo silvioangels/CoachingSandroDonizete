@@ -1,12 +1,16 @@
 package application.controller;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -18,7 +22,7 @@ import javax.swing.JOptionPane;
 import application.enumeration.TelaEnum;
 import application.navigation.ConteudoNavigator;
 
-public class PrincipalController extends AbstraticController {
+public class PrincipalController extends AbstraticController implements Initializable {
 	
 	private static Stage stage;
 	
@@ -30,6 +34,26 @@ public class PrincipalController extends AbstraticController {
 	
 	@FXML
     private StackPane conteudoStackPane;
+	
+	@FXML
+	private Button btnInicio;
+	
+	@FXML
+	private Button btnCadastroNovoCoachee;
+	
+	@FXML
+	private Button btnDadosPrograma;
+	
+	@FXML
+	private Button btnSessaoHistoricoRota;
+	
+	@FXML
+	private Button btnCompetencia;
+	
+	@Override
+	public void initialize(URL url, ResourceBundle resourses) {
+		atualizarCorSelecaoBotoesMenu(TelaEnum.TELA_PRINCIPAL);
+	}
 	
 	@Override
 	public void start(Stage initStage) throws Exception {
@@ -74,11 +98,13 @@ public class PrincipalController extends AbstraticController {
 	
 	@FXML
     void abrirTelaInicio(ActionEvent event) {
+		atualizarCorSelecaoBotoesMenu(TelaEnum.CONTEUDO_INICIO);
         ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_INICIO.getCaminhoFxml());
     }
 	
 	@FXML
     void abrirTelaCadastroNovoCoachee(ActionEvent event) {
+		atualizarCorSelecaoBotoesMenu(TelaEnum.CONTEUDO_CADASTRO_COACHEE);
         ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
     }
 	
@@ -90,6 +116,32 @@ public class PrincipalController extends AbstraticController {
 			ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_DADOS_PROGRAMA.getCaminhoFxml());
 		}
     }
+	
+	private void atualizarCorSelecaoBotoesMenu(TelaEnum telaEnum){
+		String corDeFundoDefault = "-fx-background-color: #e4e4e4;-fx-border-color:gray";
+		String corDeFundoSelecionado = "-fx-background-color: red;-fx-border-color:gray";
+		btnInicio.setStyle(corDeFundoDefault);
+		btnCadastroNovoCoachee.setStyle(corDeFundoDefault);
+		btnDadosPrograma.setStyle(corDeFundoDefault);
+		btnSessaoHistoricoRota.setStyle(corDeFundoDefault);
+		btnCompetencia.setStyle(corDeFundoDefault);
+		
+		switch (TelaEnum.getDadosTelaEnumFromString(telaEnum.getDescricao())) {
+		case CONTEUDO_INICIO:
+			btnInicio.setStyle(corDeFundoSelecionado);
+			break;
+		case CONTEUDO_CADASTRO_COACHEE:
+			btnCadastroNovoCoachee.setStyle(corDeFundoSelecionado);
+			break;
+		case CONTEUDO_DADOS_PROGRAMA:
+			btnInicio.setStyle(corDeFundoSelecionado);
+			break;
+
+		default:
+			break;
+		}
+		
+	}
 	
 	
 	public static Stage getStage() {
