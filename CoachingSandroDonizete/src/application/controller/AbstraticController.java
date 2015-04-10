@@ -2,13 +2,16 @@ package application.controller;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.application.Application;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 import application.model.ConsultaCoachee;
 
-public class AbstraticController extends Application{
+public class AbstraticController extends Application implements Initializable{
 	
 	protected static ConsultaCoachee consultaCoacheeApplication;
 	
@@ -25,6 +28,11 @@ public class AbstraticController extends Application{
 		
 	}
 	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+	}
+	
 	protected void ajustarScrollComTamanhoResolucaoTela(ScrollPane scrollPane){
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -32,4 +40,5 @@ public class AbstraticController extends Application{
 		
 	}
 
+	
 }

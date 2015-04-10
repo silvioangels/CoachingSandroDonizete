@@ -10,7 +10,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
@@ -29,7 +28,7 @@ import application.model.ConsultaCoachee;
 import application.model.TableViewCoacheesAtivos;
 import application.navigation.ConteudoNavigator;
 
-public class ConteudoInicioController extends AbstraticController implements Initializable{
+public class ConteudoInicioController extends AbstraticController{
 	
 	private static Stage stage;
 	

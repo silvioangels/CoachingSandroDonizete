@@ -7,7 +7,6 @@ import java.time.ZoneId;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -24,7 +23,7 @@ import application.model.CoacheePerson;
 import application.model.ConsultaCoachee;
 import application.util.MaskFieldUtil;
 
-public class ConteudoCadastroCoacheeController extends AbstraticController implements Initializable{
+public class ConteudoCadastroCoacheeController extends AbstraticController{
 	
 	@FXML
 	private AnchorPane anchorPaneConteudoCadastroCoacheePrincipal;

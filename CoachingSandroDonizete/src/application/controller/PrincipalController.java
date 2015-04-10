@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,7 +21,7 @@ import javax.swing.JOptionPane;
 import application.enumeration.TelaEnum;
 import application.navigation.ConteudoNavigator;
 
-public class PrincipalController extends AbstraticController implements Initializable {
+public class PrincipalController extends AbstraticController{
 	
 	private static Stage stage;
 	
