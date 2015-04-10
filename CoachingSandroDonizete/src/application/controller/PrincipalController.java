@@ -52,7 +52,7 @@ public class PrincipalController extends AbstraticController implements Initiali
 	
 	@Override
 	public void initialize(URL url, ResourceBundle resourses) {
-		atualizarCorSelecaoBotoesMenu(TelaEnum.TELA_PRINCIPAL);
+		atualizarCorSelecaoBotoesMenu(TelaEnum.CONTEUDO_INICIO);
 	}
 	
 	@Override
@@ -118,8 +118,10 @@ public class PrincipalController extends AbstraticController implements Initiali
     }
 	
 	private void atualizarCorSelecaoBotoesMenu(TelaEnum telaEnum){
+		
 		String corDeFundoDefault = "-fx-background-color: #e4e4e4;-fx-border-color:gray";
 		String corDeFundoSelecionado = "-fx-background-color: red;-fx-border-color:gray";
+		
 		btnInicio.setStyle(corDeFundoDefault);
 		btnCadastroNovoCoachee.setStyle(corDeFundoDefault);
 		btnDadosPrograma.setStyle(corDeFundoDefault);

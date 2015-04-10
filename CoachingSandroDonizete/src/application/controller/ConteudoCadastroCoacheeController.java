@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -26,7 +27,10 @@ import application.util.MaskFieldUtil;
 public class ConteudoCadastroCoacheeController extends AbstraticController implements Initializable{
 	
 	@FXML
-	private AnchorPane anchorPanePrincipal;
+	private AnchorPane anchorPaneConteudoCadastroCoacheePrincipal;
+	
+	@FXML
+	private ScrollPane scrollPaneConteudoCadastroCoachee;
 	
 	@FXML
 	private Button btnSalvarInformacoes;
@@ -86,10 +90,10 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	private TextArea comoConheceu;
 	
 	@Override
-	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+	public void initialize(URL url, ResourceBundle resourses) {
 		try {
 			
-			ajustarTamanhoResolucaoTelaPane(anchorPanePrincipal);
+			ajustarScrollComTamanhoResolucaoTela(scrollPaneConteudoCadastroCoachee);
 			
 			carregarListas();
 			carregarDadosCoachee();

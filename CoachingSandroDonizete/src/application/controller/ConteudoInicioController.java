@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,7 +36,10 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	private ObservableList<ConsultaCoachee> listaCoacheesAtivos;
 	
 	@FXML
-	private AnchorPane anchorPanePrincipal;
+	private AnchorPane anchorPaneConteudoInicioPrincipal;
+	
+	@FXML
+	private ScrollPane scrollPaneConteudoInicio;
 	
 	@FXML
 	private Hyperlink quantidadeCoacheeAtivos;
@@ -55,7 +59,7 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	@Override
 	public void initialize(URL url, ResourceBundle resorses) {
 		
-		ajustarTamanhoResolucaoTelaPane(anchorPanePrincipal);
+		ajustarScrollComTamanhoResolucaoTela(scrollPaneConteudoInicio);
 		
 		nomeCoacheeColuna.setCellValueFactory(cellData  -> cellData.getValue().getNomeCoachee());
 		ultimaSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getUltimaSessao());

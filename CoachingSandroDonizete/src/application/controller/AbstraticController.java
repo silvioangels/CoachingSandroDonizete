@@ -4,13 +4,16 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javafx.application.Application;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 import application.model.ConsultaCoachee;
 
 public class AbstraticController extends Application{
 	
 	protected static ConsultaCoachee consultaCoacheeApplication;
+	
+	private final int tamanhaAlturaCabecalho = 100;
+	private final int tamanhaLargutaMenu = 200;
 	
 	@Override
 	public void init() {
@@ -22,12 +25,11 @@ public class AbstraticController extends Application{
 		
 	}
 	
-	protected void ajustarTamanhoResolucaoTelaPane(AnchorPane anchorPane){
+	protected void ajustarScrollComTamanhoResolucaoTela(ScrollPane scrollPane){
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		anchorPane.setPrefSize(screenSize.getWidth(), screenSize.getHeight());
+		scrollPane.setPrefSize(screenSize.getWidth()-tamanhaLargutaMenu, screenSize.getHeight()-tamanhaAlturaCabecalho);
 		
 	}
-	
 
 }

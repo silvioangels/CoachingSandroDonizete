@@ -8,9 +8,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
-<ScrollPane prefHeight="700.0" prefWidth="800.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoInicioController">
+
+<ScrollPane fx:id="scrollPaneConteudoInicio" prefHeight="700.0" prefWidth="1200.0" styleClass="scroolpane" stylesheets="@../css/conteudoInicio.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConteudoInicioController">
   <content>
-	<AnchorPane fx:id="anchorPanePrincipal" prefHeight="700.0" prefWidth="800.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css">
+	<AnchorPane fx:id="anchorPaneConteudoInicioPrincipal" prefHeight="700.0" prefWidth="1000.0" styleClass="pane" stylesheets="@../css/conteudoInicio.css">
 		<children>
 			<Button layoutX="247.0" layoutY="353.0" mnemonicParsing="false" onAction="#cadastroNovoCoachee" prefHeight="25.0" prefWidth="267.0" styleClass="btnRed" text="Cadastro de novo Coachee" />
 	      <TableView fx:id="tabelaCoacheesAtivos" layoutX="82.0" layoutY="139.0" onMouseClicked="#carregarCoacheeSelecionado" prefHeight="198.0" prefWidth="622.0">
