@@ -18,6 +18,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import application.bo.FactoryBO;
 import application.enumeration.ResoursesEnum;
@@ -31,6 +32,9 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	private static Stage stage;
 	
 	private ObservableList<ConsultaCoachee> listaCoacheesAtivos;
+	
+	@FXML
+	private AnchorPane anchorPanePrincipal;
 	
 	@FXML
 	private Hyperlink quantidadeCoacheeAtivos;
@@ -49,6 +53,8 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 	
 	@Override
 	public void initialize(URL url, ResourceBundle resorses) {
+		
+		ajustarTamanhoResolucaoTelaPane(anchorPanePrincipal);
 		
 		nomeCoacheeColuna.setCellValueFactory(cellData  -> cellData.getValue().getNomeCoachee());
 		ultimaSessaoColuna.setCellValueFactory(cellData -> cellData.getValue().getUltimaSessao());

@@ -13,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import javax.swing.JOptionPane;
 
@@ -22,9 +23,10 @@ import application.model.CoacheePerson;
 import application.model.ConsultaCoachee;
 import application.util.MaskFieldUtil;
 
-
-
 public class ConteudoCadastroCoacheeController extends AbstraticController implements Initializable{
+	
+	@FXML
+	private AnchorPane anchorPanePrincipal;
 	
 	@FXML
 	private Button btnSalvarInformacoes;
@@ -86,6 +88,8 @@ public class ConteudoCadastroCoacheeController extends AbstraticController imple
 	@Override
 	public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
 		try {
+			
+			ajustarTamanhoResolucaoTelaPane(anchorPanePrincipal);
 			
 			carregarListas();
 			carregarDadosCoachee();

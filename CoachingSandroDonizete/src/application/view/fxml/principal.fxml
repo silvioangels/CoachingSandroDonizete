@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="761.0" prefWidth="1007.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
    <top>
-		<AnchorPane fx:id="anchorPaneCabecalho" prefHeight="88.0" prefWidth="800.0" styleClass="cabecalho">
+		<AnchorPane fx:id="anchorPaneCabecalho" prefHeight="100.0" prefWidth="800.0" styleClass="cabecalho">
 			<children>
 				<Label layoutX="238.0" prefHeight="49.0" prefWidth="95.0" text="oaching" textFill="#969696">
 					<font>
@@ -42,11 +42,12 @@
 		</AnchorPane>
    </top>
    <left>
-      <VBox prefHeight="700.0" prefWidth="201.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="700.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="201.0" text="Inicio" onAction="#abrirTelaInicio" styleClass="btnRed" />
+            <Button mnemonicParsing="false" onAction="#abrirTelaInicio" prefHeight="39.0" prefWidth="201.0" styleClass="btnRed" text="Inicio" />
             
             <Accordion prefHeight="700.0" prefWidth="202.0">
+            
              <expandedPane>
 	            <TitledPane fx:id="titledPaneCliente" text="Cliente" animated="true" expanded="true">
 	                  <content>
@@ -60,8 +61,9 @@
 	                  </content>
 	                </TitledPane>
 	            </expandedPane>
+            
               <panes>
-			    <fx:reference source="titledPaneCliente" />
+	           <fx:reference source="titledPaneCliente" />
                <TitledPane expanded="false" text="Sessões">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -79,6 +81,6 @@
       </VBox>
    </left>
    <center>
-   	  <StackPane fx:id="conteudoStackPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" />
+   	  <StackPane fx:id="conteudoStackPane" prefHeight="700.0" prefWidth="800.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" />
    </center>
 </BorderPane>
