@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -62,6 +63,7 @@ public class ConteudoInicioController extends AbstraticController implements Ini
 		
 		tabelaCoacheesAtivos.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         tabelaCoacheesAtivos.setItems(recuperarTodasConsultasCoacheeAtivos());
+        tabelaCoacheesAtivos.setPlaceholder(new Label("Não existe Coachee Cadastrado"));
         
         quantidadeCoacheeAtivos.setText(String.valueOf(listaCoacheesAtivos.size()));
 		
