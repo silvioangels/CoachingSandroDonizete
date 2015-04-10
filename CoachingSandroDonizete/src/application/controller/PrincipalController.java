@@ -37,8 +37,12 @@ public class PrincipalController extends AbstraticController{
 	@FXML
 	private Button btnInicio;
 	
+	private static Button btnStaticInicio;
+	
 	@FXML
 	private Button btnCadastroNovoCoachee;
+	
+	private static Button btnStaticCadastroNovoCoachee;
 	
 	@FXML
 	private Button btnDadosPrograma;
@@ -52,6 +56,8 @@ public class PrincipalController extends AbstraticController{
 	@Override
 	public void initialize(URL url, ResourceBundle resourses) {
 		atualizarCorSelecaoBotoesMenu(TelaEnum.CONTEUDO_INICIO);
+		btnStaticInicio = btnInicio;
+		btnStaticCadastroNovoCoachee = btnCadastroNovoCoachee;
 	}
 	
 	@Override
@@ -144,13 +150,20 @@ public class PrincipalController extends AbstraticController{
 		
 	}
 	
-	
 	public static Stage getStage() {
 		return stage;
 	}
 
 	public static void setStage(Stage stage) {
 		PrincipalController.stage = stage;
+	}
+	
+	public static Button getBtnStaticCadastroNovoCoachee() {
+		return btnStaticCadastroNovoCoachee;
+	}
+	
+	public static Button getBtnStaticInicio() {
+		return btnStaticInicio;
 	}
 
 	public static void main(String[] args) {

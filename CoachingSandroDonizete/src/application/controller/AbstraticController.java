@@ -9,14 +9,15 @@ import javafx.application.Application;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
+import application.enumeration.ResoursesEnum;
 import application.model.ConsultaCoachee;
 
 public class AbstraticController extends Application implements Initializable{
 	
 	protected static ConsultaCoachee consultaCoacheeApplication;
 	
-	private final int tamanhaAlturaCabecalho = 100;
-	private final int tamanhaLargutaMenu = 200;
+	private final int tamanhaAlturaCabecalho = Integer.parseInt(ResoursesEnum.PRINCIPAL_CABECALHO_ALTURA.getRecurso());
+	private final int tamanhaLargutaMenu = Integer.parseInt(ResoursesEnum.PRINCIPAL_MENU_COMPRIMENTO.getRecurso());
 	
 	@Override
 	public void init() {
@@ -29,7 +30,7 @@ public class AbstraticController extends Application implements Initializable{
 	}
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL url, ResourceBundle resourses) {
 		
 	}
 	

@@ -56,7 +56,7 @@ public class ConteudoInicioController extends AbstraticController{
     private TableColumn<TableViewCoacheesAtivos, String> numeroSessaoColuna;
 	
 	@Override
-	public void initialize(URL url, ResourceBundle resorses) {
+	public void initialize(URL url, ResourceBundle resourses) {
 		
 		ajustarScrollComTamanhoResolucaoTela(scrollPaneConteudoInicio);
 		
@@ -107,7 +107,8 @@ public class ConteudoInicioController extends AbstraticController{
 	private void cadastroNovoCoachee() {
 
 		try {
-			
+			PrincipalController.getBtnStaticInicio().setStyle("-fx-background-color: #e4e4e4;-fx-border-color:gray");
+			PrincipalController.getBtnStaticCadastroNovoCoachee().setStyle("-fx-background-color: red;-fx-border-color:gray");
 			consultaCoacheeApplication = null;
 			
 			ConteudoNavigator.carregarCena(TelaEnum.CONTEUDO_CADASTRO_COACHEE.getCaminhoFxml());
