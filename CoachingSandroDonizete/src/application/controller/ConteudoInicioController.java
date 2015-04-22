@@ -185,9 +185,5 @@ public class ConteudoInicioController extends AbstraticController{
 	public static void setStage(Stage stage) {
 		ConteudoInicioController.stage = stage;
 	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
 
 }
