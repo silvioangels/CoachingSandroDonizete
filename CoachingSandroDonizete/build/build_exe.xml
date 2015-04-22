@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<project name="CoachingSandroDonizete" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<project name="DelphosCoachingApp" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
 	<target name="init-fx-tasks">
 		<path id="fxant">
 			<filelist>
 				<file name="${java.home}\..\lib\ant-javafx.jar"/>
 				<file name="${java.home}\lib\jfxrt.jar"/>
-				<file name="${basedir}"/>
 			</filelist>
 		</path>
 	
@@ -81,38 +80,14 @@
 			</fileset>
 		</copy>
 	
-		<mkdir dir="dist/resources" />
-		<copy todir="dist/resources" >
-		    <fileset dir="../resources" />
-		</copy>
-
-		<mkdir dir="package" />
-
-		<!-- Icons only for Windows -->
-		<mkdir dir="package/windows" />
-		<copy todir="package/windows">
-		    <fileset dir="..">
-		        <include name="Alvo.ico" />
-		        <include name="App-setup-icon.bmp" />
-		    </fileset>
-		</copy>
-
-		<!-- Icons only for MacOS -->
-		<mkdir dir="package/macosx" />
-		<copy todir="package/macosx">
-		    <fileset dir="..">
-		        <include name="Alvo.icns" />
-		    </fileset>
-		</copy>
 	
 		<fx:resources id="appRes">
-			<fx:fileset dir="dist" includes="CoachingSandroDonizete.jar"/>
+			<fx:fileset dir="dist" includes="DelphosCoachingApp.jar"/>
 			<fx:fileset dir="dist" includes="libs/*"/>
-			<fx:fileset dir="dist" includes="resources/**"/>
 		</fx:resources>
 	
 		<fx:application id="fxApplication"
-			name="Delphos Coaching 2015"
+			name="Delphos Coaching"
 			mainClass="application.controller.PreLoaderController"
 		/>
 	
@@ -120,7 +95,7 @@
 	
 	
 	
-		<fx:jar destfile="dist/CoachingSandroDonizete.jar">
+		<fx:jar destfile="dist/DelphosCoachingApp.jar">
 			<fx:application refid="fxApplication"/>
 			<fileset dir="build/classes">
 			</fileset>
@@ -128,12 +103,23 @@
 	
 			<manifest>
 				<attribute name="Implementation-Vendor" value="Delphos Coaching"/>
-				<attribute name="Implementation-Title" value="Delphos Coaching 2015"/>
+				<attribute name="Implementation-Title" value="Delphos Coaching"/>
 				<attribute name="Implementation-Version" value="1"/>
 				<attribute name="JavaFX-Feature-Proxy" value="None"/>
 			</manifest>
 		</fx:jar>
 	
+		<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+		<fx:signjar
+			keystore="${basedir}/../resources/delphoscoaching"
+			alias="delphoscoaching"
+			keypass="delphoscoaching"
+			storepass="delphoscoaching"
+			destDir="${basedir}/dist">
+			<fileset dir='dist'>
+				<include name='**/*.jar' />
+			</fileset>
+		</fx:signjar>
 	
 		<mkdir dir="deploy" />
 		<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
@@ -143,14 +129,15 @@
 			includeDT="false"
 			offlineAllowed="true"
 			outdir="${basedir}/deploy"
-			outfile="CoachingSandroDonizete" nativeBundles="exe"
+			outfile="DelphosCoachingApp" nativeBundles="exe"
 			updatemode="background" >
 	
 			<fx:platform basedir="${java.home}"/>
-			<fx:info title="CoachingSandroDonizete" vendor="Delphos Coaching"/>
+			<fx:info title="DelphosCoachingApp" vendor="Delphos Coaching"/>
 	
 			<fx:application refId="fxApplication"/>
 			<fx:resources refid="appRes"/>
+			<fx:permissions elevated="true"/>
 		</fx:deploy>
 	
 	
